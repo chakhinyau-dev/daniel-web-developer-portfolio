@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ── Space-dark · Electric Violet + Cyan ── */
+    --background: 221 39% 5%;
+    --foreground: 0 0% 97%;
+
+    --card: 221 28% 8%;
+    --card-foreground: 0 0% 97%;
+
+    --popover: 221 28% 8%;
+    --popover-foreground: 0 0% 97%;
+
+    --primary: 263 85% 68%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 263 85% 78%;
+
+    --secondary: 221 22% 13%;
+    --secondary-foreground: 0 0% 97%;
+
+    --muted: 221 22% 13%;
+    --muted-foreground: 221 15% 62%;
+
+    --accent: 185 100% 45%;
+    --accent-foreground: 221 39% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 221 18% 16%;
+    --input: 221 18% 16%;
+    --ring: 263 85% 68%;
+
+    --radius: 0.875rem;
+
+    --surface: 221 28% 8%;
+    --surface-highlight: 221 22% 13%;
+    --text-muted: 221 15% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.04em;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: hsl(221 18% 22%);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover { background: hsl(263 40% 38%); }
+
+/* ── Core Utilities ──────────────────────────────────────────── */
+@layer utilities {
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(263 85% 68% / 0.18), 0 0 60px hsl(263 85% 68% / 0.08);
+  }
+
+  .glow-primary-strong {
+    box-shadow: 0 0 30px hsl(263 85% 68% / 0.32), 0 0 80px hsl(263 85% 68% / 0.14);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 20px hsl(185 100% 45% / 0.25), 0 0 60px hsl(185 100% 45% / 0.1);
+  }
+
+  .gradient-border {
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, hsl(263 85% 68% / 0.55), hsl(185 100% 45% / 0.35) 60%, transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .glass {
+    background: hsl(0 0% 100% / 0.03);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  /* Premium multi-stop gradient: white → violet → cyan */
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(0 0% 97%) 0%, hsl(263 85% 80%) 45%, hsl(185 100% 60%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-violet {
+    background: linear-gradient(135deg, hsl(263 85% 80%), hsl(220 70% 78%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, hsl(185 100% 60%), hsl(200 90% 65%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .btn-fluid {
+    @apply transition-all duration-200 ease-out;
+  }
+  .btn-fluid:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 22px hsl(263 85% 68% / 0.28);
+  }
+  .btn-fluid:active {
+    transform: translateY(0) scale(0.97);
+    transition-duration: 80ms;
+  }
+}
+
+/* ── Aurora Background ───────────────────────────────────────── */
+@keyframes aurora-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes aurora-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.08); }
+}
+
+.aurora-bg {
+  background:
+    radial-gradient(ellipse 70% 60% at 15% -10%, hsl(263 85% 68% / 0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 50% at 85% 15%, hsl(185 100% 45% / 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 50% at 50% 110%, hsl(220 70% 55% / 0.07) 0%, transparent 55%),
+    hsl(221 39% 5%);
+}
+
+/* Legacy alias used by footer */
+.stripe-bg {
+  background:
+    linear-gradient(
+      135deg,
+      hsl(221 39% 5%) 0%,
+      hsl(240 28% 7%) 30%,
+      hsl(263 30% 7%) 60%,
+      hsl(221 39% 5%) 100%
+    );
+  background-size: 400% 400%;
+  animation: aurora-shift 22s ease infinite;
+}
+
+/* Card background */
+.stripe-bg-card {
+  background:
+    linear-gradient(
+      135deg,
+      hsl(221 28% 8%) 0%,
+      hsl(240 22% 10%) 25%,
+      hsl(221 25% 9%) 50%,
+      hsl(200 18% 9%) 75%,
+      hsl(221 28% 8%) 100%
+    );
+  background-size: 200% 200%;
+  animation: aurora-shift 14s ease infinite;
+}
+
+/* ── Floating Orb Animations ─────────────────────────────────── */
+@keyframes mesh-float {
+  0%, 100% { transform: translate(0, 0)     scale(1);    }
+  33%       { transform: translate(28px, -18px) scale(1.06); }
+  66%       { transform: translate(-18px, 14px) scale(0.94); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 0.95; }
+}
+
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%);  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0);    }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Typing Dots (chatbot) ───────────────────────────────────── */
+@keyframes typing-dot {
+  0%, 60%, 100% { transform: translateY(0);    opacity: 0.4; }
+  30%           { transform: translateY(-5px); opacity: 1;   }
+}
+
+/* ── Category pill glow (project catalog) ────────────────────── */
+@keyframes pill-glow {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(263 85% 68% / 0); }
+  50%       { box-shadow: 0 0 16px 4px hsl(263 85% 68% / 0.3); }
+}
+
+/* ── Scan-line accent ────────────────────────────────────────── */
+@keyframes scan-line {
+  0%   { transform: translateY(0);    opacity: 0; }
+  5%   { opacity: 0.6; }
+  95%  { opacity: 0.6; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+/* ── Gradient border shimmer ─────────────────────────────────── */
+@keyframes border-spin {
+  from { --angle: 0deg; }
+  to   { --angle: 360deg; }
+}
+
+/* ── Hide scrollbar (keep scroll) ────────────────────────────── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

@@ -1,0 +1,254 @@
+import c1 from "@/assets/apps/c1.webp";
+import c2 from "@/assets/apps/c2.webp";
+import c3 from "@/assets/apps/c3.webp";
+import c4 from "@/assets/apps/c4.webp";
+import c5 from "@/assets/apps/c5.webp";
+import c6 from "@/assets/apps/c6.webp";
+import c7 from "@/assets/apps/c7.webp";
+import c8 from "@/assets/apps/c8.webp";
+import c9 from "@/assets/apps/c9.webp";
+import n1 from "@/assets/apps/n1.webp";
+import n2 from "@/assets/apps/n2.webp";
+import n3 from "@/assets/apps/n3.webp";
+import n4 from "@/assets/apps/n4.webp";
+import n5 from "@/assets/apps/n5.webp";
+import n6 from "@/assets/apps/n6.webp";
+import n7 from "@/assets/apps/n7.webp";
+import n8 from "@/assets/apps/n8.webp";
+import n9 from "@/assets/apps/n9.webp";
+import m1 from "@/assets/apps/m1.webp";
+import m2 from "@/assets/apps/m2.webp";
+import m3 from "@/assets/apps/m3.webp";
+import m4 from "@/assets/apps/m4.webp";
+import m5 from "@/assets/apps/m5.webp";
+import m6 from "@/assets/apps/m6.webp";
+import g1 from "@/assets/apps/g1.webp";
+import g2 from "@/assets/apps/g2.webp";
+import g3 from "@/assets/apps/g3.webp";
+import g4 from "@/assets/apps/g4.webp";
+import g5 from "@/assets/apps/g5.webp";
+import g6 from "@/assets/apps/g6.webp";
+import g7 from "@/assets/apps/g7.webp";
+import g8 from "@/assets/apps/g8.webp";
+import g9 from "@/assets/apps/g9.webp";
+import g10 from "@/assets/apps/g10.webp";
+import g11 from "@/assets/apps/g11.webp";
+import g12 from "@/assets/apps/g12.webp";
+import emfscanner1 from "@/assets/apps/1.webp";
+import emfscanner2 from "@/assets/apps/2.webp";
+import emfscanner3 from "@/assets/apps/3.webp";
+import ardrawing1 from "@/assets/apps/4.webp";
+import ardrawing2 from "@/assets/apps/5.webp";
+import ardrawing3 from "@/assets/apps/6.webp";
+import santacall1 from "@/assets/apps/7.webp";
+import santacall2 from "@/assets/apps/8.webp";
+import santacall3 from "@/assets/apps/9.webp";
+import azlock1 from "@/assets/apps/10.webp";
+import azlock2 from "@/assets/apps/11.webp";
+import azlock3 from "@/assets/apps/12.webp";
+import callscreen1 from "@/assets/apps/13.webp";
+import callscreen2 from "@/assets/apps/14.webp";
+import callscreen3 from "@/assets/apps/15.webp";
+import gpstracker1 from "@/assets/apps/16.webp";
+import gpstracker2 from "@/assets/apps/17.webp";
+import gpstracker3 from "@/assets/apps/18.webp";
+import unicornsmatch1 from "@/assets/apps/unicornsmatch-1.webp";
+import unicornsmatch2 from "@/assets/apps/unicornsmatch-2.webp";
+import unicornsmatch3 from "@/assets/apps/unicornsmatch-3.webp";
+import unicorntreats1 from "@/assets/apps/unicorntreats-1.webp";
+import unicorntreats2 from "@/assets/apps/unicorntreats-2.webp";
+import unicorntreats3 from "@/assets/apps/unicorntreats-3.webp";
+import zombiewar1 from "@/assets/apps/zombiewar-1.webp";
+import zombiewar2 from "@/assets/apps/zombiewar-2.webp";
+import zombiewar3 from "@/assets/apps/zombiewar-3.webp";
+import fnfstudio1 from "@/assets/apps/fnfstudio-1.webp";
+import fnfstudio2 from "@/assets/apps/fnfstudio-2.webp";
+import fnfstudio3 from "@/assets/apps/fnfstudio-3.webp";
+import hsbcprivatebankinghk1 from "@/assets/apps/hsbcprivatebankinghk-1.png";
+import hsbcprivatebankinghk2 from "@/assets/apps/hsbcprivatebankinghk-2.png";
+import hsbcprivatebankinghk3 from "@/assets/apps/hsbcprivatebankinghk-3.png";
+import staffhk1 from "@/assets/apps/staffhk-1.png";
+import staffhk2 from "@/assets/apps/staffhk-2.png";
+import staffhk3 from "@/assets/apps/staffhk-3.png";
+import buycarhk1 from "@/assets/apps/buycarhk-1.png";
+import buycarhk2 from "@/assets/apps/buycarhk-2.png";
+import buycarhk3 from "@/assets/apps/buycarhk-3.png";
+import hkadventist1 from "@/assets/apps/hkadventist-1.png";
+import hkadventist2 from "@/assets/apps/hkadventist-2.png";
+import hkadventist3 from "@/assets/apps/hkadventist-3.png";
+import gourmax1 from "@/assets/apps/gourmax-1.png";
+import gourmax2 from "@/assets/apps/gourmax-2.png";
+import gourmax3 from "@/assets/apps/gourmax-3.png";
+import seamart1 from "@/assets/apps/seamart-1.png";
+import seamart2 from "@/assets/apps/seamart-2.png";
+import seamart3 from "@/assets/apps/seamart-3.png";
+import hkfpbyhkt1 from "@/assets/apps/hkfpbyhkt-1.png";
+import hkfpbyhkt2 from "@/assets/apps/hkfpbyhkt-2.png";
+import hkfpbyhkt3 from "@/assets/apps/hkfpbyhkt-3.png";
+import murrayhkt1 from "@/assets/apps/murrayhkt-1.png";
+import murrayhkt2 from "@/assets/apps/murrayhkt-2.png";
+import murrayhkt3 from "@/assets/apps/murrayhkt-3.png";
+import hkejEdu1 from "@/assets/apps/hkej-edu-1.png";
+import hkejEdu2 from "@/assets/apps/hkej-edu-2.png";
+import hkejEdu3 from "@/assets/apps/hkej-edu-3.png";
+import ejinsightHkej1 from "@/assets/apps/ejinsight-hkej-1.png";
+import ejinsightHkej2 from "@/assets/apps/ejinsight-hkej-2.png";
+import ejinsightHkej3 from "@/assets/apps/ejinsight-hkej-3.png";
+import wayfoong1 from "@/assets/apps/wayfoong-1.png";
+import wayfoong2 from "@/assets/apps/wayfoong-2.png";
+import wayfoong3 from "@/assets/apps/wayfoong-3.png";
+import hksos1 from "@/assets/apps/hksos-1.png";
+import hksos2 from "@/assets/apps/hksos-2.png";
+import hksos3 from "@/assets/apps/hksos-3.png";
+import westkowloon1 from "@/assets/apps/westkowloon-1.png";
+import westkowloon2 from "@/assets/apps/westkowloon-2.png";
+import westkowloon3 from "@/assets/apps/westkowloon-3.png";
+import boomshort1 from "@/assets/apps/boomshort-1.png";
+import boomshort2 from "@/assets/apps/boomshort-2.png";
+import boomshort3 from "@/assets/apps/boomshort-3.png";
+import polyauction1 from "@/assets/apps/polyauction-1.png";
+import polyauction2 from "@/assets/apps/polyauction-2.png";
+import polyauction3 from "@/assets/apps/polyauction-3.png";
+import aidetector1 from "@/assets/apps/aidetector-1.png";
+import aidetector2 from "@/assets/apps/aidetector-2.png";
+import aidetector3 from "@/assets/apps/aidetector-3.png";
+import qrgenpro1 from "@/assets/apps/qrgenpro-1.png";
+import qrgenpro2 from "@/assets/apps/qrgenpro-2.png";
+import qrgenpro3 from "@/assets/apps/qrgenpro-3.png";
+import heyo1 from "@/assets/apps/heyo-1.png";
+import heyo2 from "@/assets/apps/heyo-2.png";
+import heyo3 from "@/assets/apps/heyo-3.png";
+import hktdc1 from "@/assets/apps/hktdc-1.png";
+import hktdc2 from "@/assets/apps/hktdc-2.png";
+import hktdc3 from "@/assets/apps/hktdc-3.png";
+
+export const screenshotMap: Record<string, string> = {
+  "emfscanner-1": emfscanner1,
+  "emfscanner-2": emfscanner2,
+  "emfscanner-3": emfscanner3,
+  "ardrawing-1": ardrawing1,
+  "ardrawing-2": ardrawing2,
+  "ardrawing-3": ardrawing3,
+  "santacall-1": santacall1,
+  "santacall-2": santacall2,
+  "santacall-3": santacall3,
+  "azlock-1": azlock1,
+  "azlock-2": azlock2,
+  "azlock-3": azlock3,
+  "callscreen-1":callscreen1,
+  "callscreen-2":callscreen2,
+  "callscreen-3":callscreen3,
+  "gpstracker-1": gpstracker1,
+  "gpstracker-2": gpstracker2,
+  "gpstracker-3": gpstracker3,
+  "unicornsmatch-1": unicornsmatch1,
+  "unicornsmatch-2": unicornsmatch2,
+  "unicornsmatch-3": unicornsmatch3,
+  "unicorntreats-1": unicorntreats1,
+  "unicorntreats-2": unicorntreats2,
+  "unicorntreats-3": unicorntreats3,
+  "zombiewar-1": zombiewar1,
+  "zombiewar-2": zombiewar2,
+  "zombiewar-3": zombiewar3,
+  "fnfstudio-1": fnfstudio1,
+  "fnfstudio-2": fnfstudio2,
+  "fnfstudio-3": fnfstudio3,
+  "hsbcprivatebankinghk-1": hsbcprivatebankinghk1,
+  "hsbcprivatebankinghk-2": hsbcprivatebankinghk2,
+  "hsbcprivatebankinghk-3": hsbcprivatebankinghk3,
+  "staffhk-1": staffhk1,
+  "staffhk-2": staffhk2,
+  "staffhk-3": staffhk3,
+  "buycarhk-1": buycarhk1,
+  "buycarhk-2": buycarhk2,
+  "buycarhk-3": buycarhk3,
+  "hkadventist-1": hkadventist1,
+  "hkadventist-2": hkadventist2,
+  "hkadventist-3": hkadventist3,
+  "gourmax-1": gourmax1,
+  "gourmax-2": gourmax2,
+  "gourmax-3": gourmax3,
+  "seamart-1": seamart1,
+  "seamart-2": seamart2,
+  "seamart-3": seamart3,
+  "hkfpbyhkt-1": hkfpbyhkt1,
+  "hkfpbyhkt-2": hkfpbyhkt2,
+  "hkfpbyhkt-3": hkfpbyhkt3,
+  "murrayhkt-1": murrayhkt1,
+  "murrayhkt-2": murrayhkt2,
+  "murrayhkt-3": murrayhkt3,
+  "hkej-edu-1": hkejEdu1,
+  "hkej-edu-2": hkejEdu2,
+  "hkej-edu-3": hkejEdu3,
+  "ejinsight-hkej-1": ejinsightHkej1,
+  "ejinsight-hkej-2": ejinsightHkej2,
+  "ejinsight-hkej-3": ejinsightHkej3,
+  "wayfoong-1": wayfoong1,
+  "wayfoong-2": wayfoong2,
+  "wayfoong-3": wayfoong3,
+  "hksos-1": hksos1,
+  "hksos-2": hksos2,
+  "hksos-3": hksos3,
+  "westkowloon-1": westkowloon1,
+  "westkowloon-2": westkowloon2,
+  "westkowloon-3": westkowloon3,
+  "boomshort-1": boomshort1,
+  "boomshort-2": boomshort2,
+  "boomshort-3": boomshort3,
+  "polyauction-1": polyauction1,
+  "polyauction-2": polyauction2,
+  "polyauction-3": polyauction3,
+  "aidetector-1": aidetector1,
+  "aidetector-2": aidetector2,
+  "aidetector-3": aidetector3,
+  "qrgenpro-1": qrgenpro1,
+  "qrgenpro-2": qrgenpro2,
+  "qrgenpro-3": qrgenpro3,
+  "heyo-1": heyo1,
+  "heyo-2": heyo2,
+  "heyo-3": heyo3,
+  "hktdc-1": hktdc1,
+  "hktdc-2": hktdc2,
+  "hktdc-3": hktdc3,
+  "c1": c1,
+  "c2": c2,
+  "c3": c3,
+  "c4": c4,
+  "c5": c5,
+  "c6": c6,
+  "c7": c7,
+  "c8": c8,
+  "c9": c9,
+  "n1": n1,
+  "n2": n2,
+  "n3": n3,
+  "n4": n4,
+  "n5": n5,
+  "n6": n6,
+  "n7": n7,
+  "n8": n8,
+  "n9": n9,
+  "m1": m1,
+  "m2": m2,
+  "m3": m3,
+  "m4": m4,
+  "m5": m5,
+  "m6": m6,
+  "g1": g1,
+  "g2": g2,
+  "g3": g3,
+  "g4": g4,
+  "g5": g5,
+  "g6": g6,
+  "g7": g7,
+  "g8": g8,
+  "g9": g9,
+  "g10": g10,
+  "g11": g11,
+  "g12": g12,
+};
+
+export function getScreenshots(keys?: string[]): string[] {
+  if (!keys) return [];
+  return keys.map((k) => screenshotMap[k]).filter(Boolean);
+}
