@@ -69,6 +69,8 @@ const skillCategories: Category[] = [
       { name: "Physics & Animation",    years: "5 yrs" },
       { name: "Photon (Multiplayer)",   years: "4 yrs" },
       { name: "In-app Purchases / Ads", years: "6 yrs" },
+      { name: "Roblox / Luau",          years: "3 yrs" },
+      { name: "Construct",              years: "3 yrs" },
     ],
   },
 
