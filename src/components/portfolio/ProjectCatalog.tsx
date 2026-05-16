@@ -108,10 +108,10 @@ const Modal = ({
 
         <div className="grid md:grid-cols-2 gap-0">
           {/* Screenshot area */}
-          {screenshots.length > 0 ? (
+          {screenshots.length > 0 || project.image ? (
             <div className="relative bg-black/40 flex items-center justify-center min-h-[280px]">
               <img
-                src={screenshots[idx]}
+                src={screenshots.length > 0 ? screenshots[idx] : project.image}
                 alt={`${project.title} preview ${idx + 1}`}
                 className="max-h-[360px] w-full object-contain"
               />
@@ -182,7 +182,7 @@ const Modal = ({
               </ul>
             </div>
 
-            {/* Footer: year + status + store link */}
+            {/* Footer: year + status + links */}
             <div className="mt-auto flex items-center justify-between pt-3 border-t border-border/50">
               <div className="flex items-center gap-2">
                 <span className="text-[10px] text-muted-foreground">{project.year}</span>
@@ -190,17 +190,30 @@ const Modal = ({
                   {statusLabel[project.status]}
                 </span>
               </div>
-              {project.playStoreId && (
-                <a
-                  href={`https://play.google.com/store/apps/details?id=${project.playStoreId}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-[11px] font-medium transition-colors hover:text-primary"
-                  style={{ color: meta.colorVar }}
-                >
-                  {tr.projects.openStore} <ExternalLink className="w-3 h-3" />
-                </a>
-              )}
+              <div className="flex items-center gap-3">
+                {project.url && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 text-[11px] font-medium transition-colors hover:opacity-80"
+                    style={{ color: meta.colorVar }}
+                  >
+                    Visit Site <ExternalLink className="w-3 h-3" />
+                  </a>
+                )}
+                {project.playStoreId && (
+                  <a
+                    href={`https://play.google.com/store/apps/details?id=${project.playStoreId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 text-[11px] font-medium transition-colors hover:opacity-80"
+                    style={{ color: meta.colorVar }}
+                  >
+                    {tr.projects.openStore} <ExternalLink className="w-3 h-3" />
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -256,10 +269,10 @@ const ProjectCard = ({
 
       {/* Visual area */}
       <div className="relative h-40 overflow-hidden">
-        {screenshots.length > 0 ? (
+        {screenshots.length > 0 || project.image ? (
           <>
             <img
-              src={screenshots[0]}
+              src={screenshots.length > 0 ? screenshots[0] : project.image}
               alt={project.title}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
