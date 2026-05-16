@@ -1,75 +1,96 @@
 import { motion } from "framer-motion";
-import { AppWindow, Blocks, Bug, Gamepad2, Smartphone, Wrench } from "lucide-react";
+import {
+  Smartphone, Globe, Gamepad2, ShoppingBag, Bot, Monitor,
+  Wrench, Blocks,
+} from "lucide-react";
 
 const workAreas = [
   {
-    title: "Android App Development",
+    title: "Mobile App Development",
     icon: Smartphone,
-    description: "Build complete Android products from idea to Play Store release.",
+    color: "hsl(263 85% 68%)",
+    description: "Build complete Android, iOS, and cross-platform apps from concept to store.",
     details: [
-      "Native app development with Kotlin, Java, and Jetpack Compose",
-      "Modern app architecture with MVVM, clean modules, and reusable components",
-      "API integration, local database, authentication, notifications, and analytics",
+      "Native Android development with Kotlin, Java, and Jetpack Compose",
+      "Cross-platform apps with Flutter and React Native for iOS & Android",
+      "API integration, local DB, authentication, push notifications, and analytics",
     ],
   },
   {
-    title: "Cross-platform Apps",
-    icon: AppWindow,
-    description: "Ship Android and iOS apps faster with shared codebases.",
+    title: "Web & SaaS Development",
+    icon: Globe,
+    color: "hsl(185 100% 45%)",
+    description: "Architect and ship production-grade web products — React/Next.js SaaS platforms, high-throughput APIs, real-time systems, and multi-tenant backends with battle-tested auth and data layers.",
     details: [
-      "Flutter and React Native development for startup and enterprise products",
-      "Platform-specific optimization where native features are required",
-      "Consistent UI/UX and release pipeline for both app stores",
+      "Next.js 14 (App Router) + React 18 + TypeScript + Tailwind CSS + shadcn/ui — SSR, SSG, ISR, and edge-ready front-ends",
+      "Scalable backends with Node.js, tRPC, REST, and GraphQL — secured with JWT / OAuth2 / NextAuth, rate-limited, and OpenAPI-documented",
+      "PostgreSQL + Prisma ORM + Supabase + Redis — schema migrations, query optimisation, caching layers, and BullMQ background job queues",
     ],
   },
   {
-    title: "App Refactor & Optimization",
-    icon: Wrench,
-    description: "Improve app quality, speed, and code maintainability.",
-    details: [
-      "Refactor legacy code into scalable architecture and cleaner modules",
-      "Performance tuning for startup time, rendering, memory, and battery use",
-      "Stability hardening with better error handling and monitoring",
-    ],
-  },
-  {
-    title: "App Development Bug Fix",
-    icon: Bug,
-    description: "Fix critical production issues quickly and safely.",
-    details: [
-      "Crash analysis from logs, bug reports, and real device reproduction",
-      "API, state-management, UI, and edge-case bug resolution",
-      "Regression-safe fixes with validation before release",
-    ],
-  },
-  {
-    title: "Game Development",
+    title: "Unity Game Development",
     icon: Gamepad2,
-    description: "Develop and improve mobile game features and gameplay systems.",
+    color: "hsl(25 95% 60%)",
+    description: "Build and ship mobile games with real-time multiplayer and polished gameplay.",
     details: [
-      "Feature implementation for casual, puzzle, and hyper-casual games",
-      "Gameplay flow, reward system, and retention-oriented UX improvements",
-      "Game service integration such as ads, in-app purchases, and analytics",
+      "Unity (C#) game features for casual, competitive, and hyper-casual titles",
+      "Real-time 1v1 battles, leaderboards, battle pass, and reward systems",
+      "Ad integration, in-app purchases, and analytics for monetised games",
+    ],
+  },
+  {
+    title: "E-commerce & Payments",
+    icon: ShoppingBag,
+    color: "hsl(340 80% 65%)",
+    description: "Build full-stack commerce platforms — from single-vendor storefronts to multi-vendor marketplaces — with production-ready payment and subscription infrastructure.",
+    details: [
+      "Product catalogue, cart, checkout, order management, and returns — end to end",
+      "Stripe (Checkout, Payment Intents, webhooks, subscriptions) · PayPal · Apple Pay · Google Pay",
+      "Multi-vendor marketplace with Stripe Connect: seller onboarding, commission splits, and payout flows",
+    ],
+  },
+  {
+    title: "AI & Automation",
+    icon: Bot,
+    color: "hsl(145 70% 50%)",
+    description: "Design and ship production-grade AI integrations and automation systems — from no-code platforms to custom LLM pipelines, built on a decade of API orchestration engineering.",
+    details: [
+      "No-code automation with Zapier, Make, and n8n — connecting apps, CRMs, and data sources",
+      "CRM implementation and customisation: GoHighLevel, Kommo, Odoo, Zoho, HubSpot",
+      "Custom LLM integrations (OpenAI, Claude) via LangChain with retrieval and agentic pipelines",
+    ],
+  },
+  {
+    title: "Desktop Applications",
+    icon: Monitor,
+    color: "hsl(50 90% 55%)",
+    description: "Build cross-platform and native Windows desktop software with system-level integration, offline-first data, and automated distribution pipelines.",
+    details: [
+      "Cross-platform apps with Electron + React: IPC, system tray, file-system watchers, auto-updater",
+      "Native Windows tools with C# + WPF + MVVM: SQL Server backend, barcode/peripheral integration",
+      "Offline-first SQLite databases, background Windows services, and installer/packaging (NSIS, Squirrel)",
     ],
   },
   {
     title: "Architecture & Technical Planning",
     icon: Blocks,
-    description: "Plan robust technical foundations before development starts.",
+    color: "hsl(220 70% 60%)",
+    description: "Plan robust technical foundations before development begins.",
     details: [
-      "Feature breakdown, module design, and sprint-ready technical roadmap",
-      "Scalable architecture decisions for long-term product growth",
-      "Engineering standards for code quality, testing, and team collaboration",
+      "Full-stack system design, API contracts, and module architecture",
+      "Sprint-ready technical roadmaps and scalable codebase standards",
+      "Engineering best practices for code quality, testing, and team collaboration",
     ],
   },
   {
-    title: "Maintenance & Feature Delivery",
-    icon: AppWindow,
-    description: "Provide long-term support after launch.",
+    title: "Refactor, Optimisation & Support",
+    icon: Wrench,
+    color: "hsl(263 60% 75%)",
+    description: "Improve quality, performance, and long-term maintainability of existing products.",
     details: [
-      "Continuous updates, feature expansion, and dependency upgrades",
-      "QA coordination, release management, and store submission support",
-      "Ongoing monitoring and iterative improvements based on user feedback",
+      "Refactor legacy codebases to modern architecture and cleaner modules",
+      "Performance tuning for load time, rendering, memory, and API latency",
+      "Ongoing feature delivery, dependency upgrades, and release management",
     ],
   },
 ];
@@ -90,10 +111,10 @@ const WhatICanWorkOnSection = () => {
           viewport={{ once: true }}
           className="text-2xl font-bold text-gradient"
         >
-          What I Can Work On
+          Services
         </motion.h2>
         <p className="text-sm text-muted-foreground mt-1">
-          Detailed support across app development, bug fixing, game features, and long-term product growth.
+          End-to-end delivery across mobile, web, games, AI, e-commerce, and desktop.
         </p>
       </div>
 
@@ -104,27 +125,38 @@ const WhatICanWorkOnSection = () => {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: index * 0.06 }}
-            whileHover={{
-              y: -3,
-              boxShadow: "0 0 28px hsl(141 73% 42% / 0.09)",
-              borderColor: "hsl(141, 73%, 42%, 0.35)",
+            transition={{ duration: 0.4, delay: index * 0.05 }}
+            whileHover={{ y: -4 }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.boxShadow = `0 12px 36px ${area.color}22, 0 0 0 1px ${area.color}35`;
             }}
-            className="rounded-xl p-5 border border-border stripe-bg-card"
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.boxShadow = "";
+            }}
+            className="rounded-xl p-5 border border-border stripe-bg-card transition-all duration-300"
           >
+            {/* Top accent stripe in category color */}
+            <div className="h-[2px] -mx-5 -mt-5 mb-5 rounded-t-xl" style={{ background: `linear-gradient(90deg, ${area.color}, ${area.color}44, transparent)` }} />
+
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center">
-                <area.icon className="w-4.5 h-4.5 text-primary" />
+              <div
+                className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
+                style={{ background: `${area.color}18`, border: `1px solid ${area.color}35` }}
+              >
+                <area.icon className="w-4.5 h-4.5" style={{ color: area.color }} />
               </div>
               <h3 className="text-sm font-bold text-foreground">{area.title}</h3>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+
+            <p className="text-sm text-muted-foreground leading-relaxed mb-3">
               {area.description}
             </p>
-            <ul className="mt-3 space-y-1.5">
+
+            <ul className="space-y-1.5">
               {area.details.map((detail) => (
-                <li key={detail} className="text-xs text-muted-foreground leading-relaxed">
-                  - {detail}
+                <li key={detail} className="flex items-start gap-2 text-xs text-muted-foreground leading-relaxed">
+                  <span className="mt-1.5 w-1 h-1 rounded-full shrink-0" style={{ background: area.color }} />
+                  {detail}
                 </li>
               ))}
             </ul>

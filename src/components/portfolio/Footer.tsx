@@ -11,10 +11,10 @@ const navLinks = [
 ];
 
 const stats = [
-  { value: "12+",             label: "Years" },
-  { value: "6",               label: "Studios" },
+  { value: "12+",                   label: "Years" },
   { value: `${profile.totalApps}+`, label: "Products shipped" },
-  { value: "6",               label: "Disciplines" },
+  { value: "6",                     label: "Disciplines" },
+  { value: "36",                    label: "Projects in catalog" },
 ];
 
 const Footer = () => {

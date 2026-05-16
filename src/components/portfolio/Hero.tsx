@@ -123,8 +123,8 @@ const Hero = () => {
             className="text-sm md:text-base text-muted-foreground max-w-lg mx-auto leading-relaxed"
             style={{ textWrap: "pretty" as never }}
           >
-            12 years building mobile apps, Unity games, web platforms, AI tools, and desktop software.
-            Delivering polished products that scale.
+            12 years building production-grade software across mobile, web, AI, and desktop.
+            Full-stack architect shipping React/Next.js SaaS platforms, scalable APIs, and real-time systems — delivering products that scale.
           </p>
         </motion.div>
 
@@ -227,10 +227,10 @@ const Hero = () => {
         {/* ── Stats ─────────────────────────────────────────────────────── */}
         <motion.div variants={itemVariants} className="flex items-baseline justify-center gap-10 md:gap-16">
           {[
-            { value: profile.totalYears, label: "Years" },
-            { value: "6",               label: "Studios" },
+            { value: profile.totalYears,      label: "Years" },
             { value: `${profile.totalApps}+`, label: "Products" },
-            { value: "6",               label: "Disciplines" },
+            { value: "6",                     label: "Disciplines" },
+            { value: "36",                    label: "Projects" },
           ].map(({ value, label }) => (
             <motion.div
               key={label}
@@ -253,12 +253,12 @@ const Hero = () => {
           className="mt-10 flex flex-wrap items-center justify-center gap-2"
         >
           {[
-            { label: "Mobile",       color: "hsl(263 85% 68%)" },
-            { label: "Unity / Games", color: "hsl(25 95% 60%)" },
-            { label: "Web SaaS",     color: "hsl(185 100% 45%)" },
-            { label: "E-commerce",   color: "hsl(340 80% 65%)" },
-            { label: "AI Automation",color: "hsl(145 70% 50%)" },
-            { label: "Desktop",      color: "hsl(50 90% 55%)"  },
+            { label: "Mobile",        color: "hsl(263 85% 68%)" },
+            { label: "Web SaaS",      color: "hsl(185 100% 45%)" },
+            { label: "AI Automation", color: "hsl(145 70% 50%)" },
+            { label: "E-commerce",    color: "hsl(340 80% 65%)" },
+            { label: "Unity / Games", color: "hsl(25 95% 60%)"  },
+            { label: "Desktop",       color: "hsl(50 90% 55%)"  },
           ].map(({ label, color }) => (
             <span
               key={label}

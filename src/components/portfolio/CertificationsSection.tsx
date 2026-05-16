@@ -118,7 +118,7 @@ const CertificationsSection = () => {
           Certifications
         </motion.h2>
         <p className="text-sm text-muted-foreground mt-1">
-          Credentials from Google and CodinGame that validate language expertise and real-world coding performance.
+          Verified credentials from Google and CodinGame spanning Android, TypeScript, Dart, Python, and C++.
         </p>
       </div>
 
@@ -134,9 +134,9 @@ const CertificationsSection = () => {
               transition={{ duration: 0.5, delay: i * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }}
               whileHover={{
                 y: -4,
-                boxShadow: "0 0 40px hsl(141 73% 42% / 0.1)",
+                boxShadow: "0 16px 48px hsl(263 85% 68% / 0.14)",
               }}
-              className="bg-card rounded-xl p-6 border border-border hover:border-primary/30 transition-all duration-300 group relative overflow-hidden"
+              className="bg-card rounded-xl p-6 border border-border hover:border-primary/40 transition-all duration-300 group relative overflow-hidden"
             >
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 

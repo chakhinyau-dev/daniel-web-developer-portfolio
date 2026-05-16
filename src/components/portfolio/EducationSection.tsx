@@ -5,11 +5,13 @@ const subjects = [
   "Software Engineering",
   "Data Structures & Algorithms",
   "Mobile Computing",
+  "Web Development",
   "Database Systems",
   "Computer Networks",
   "Operating Systems",
   "Object-Oriented Programming",
   "Human-Computer Interaction",
+  "AI & Machine Learning Fundamentals",
 ];
 
 const EducationSection = () => {
@@ -30,7 +32,9 @@ const EducationSection = () => {
         >
           Education
         </motion.h2>
-        <p className="text-sm text-muted-foreground mt-1">Academic foundation and professional growth.</p>
+        <p className="text-sm text-muted-foreground mt-1">
+          Academic foundation for a full-stack engineering career.
+        </p>
       </div>
 
       <motion.div
@@ -38,36 +42,39 @@ const EducationSection = () => {
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-        whileHover={{
-          boxShadow: "0 0 40px hsl(141 73% 42% / 0.08)",
-        }}
-        className="bg-card rounded-xl p-6 md:p-8 border border-border relative overflow-hidden group"
+        whileHover={{ boxShadow: "0 16px 48px hsl(263 85% 68% / 0.1)" }}
+        className="bg-card rounded-xl p-6 md:p-8 border border-border relative overflow-hidden group transition-all duration-300"
       >
-        {/* Gradient accent line */}
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+        {/* Gradient accent top line */}
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
 
         <div className="flex items-start gap-4">
           <motion.div
             whileHover={{ rotate: -10, scale: 1.1 }}
-            className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 glow-primary"
+            className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0 glow-primary transition-all duration-300"
+            style={{ background: "hsl(263 85% 68% / 0.12)", border: "1px solid hsl(263 85% 68% / 0.3)" }}
           >
             <GraduationCap className="w-7 h-7 text-primary" />
           </motion.div>
+
           <div className="flex-1">
             <h3 className="text-lg font-bold text-foreground">Volunteer State Community College</h3>
-            <p className="text-sm text-muted-foreground mt-1">Associate Degree in Computer Science / Information Technology</p>
+            <p className="text-sm text-muted-foreground mt-1">
+              Associate Degree · Computer Science / Information Technology
+            </p>
 
             <div className="flex flex-wrap gap-4 mt-3 text-sm text-muted-foreground">
               <div className="flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5" />
+                <MapPin className="w-3.5 h-3.5 text-primary" />
                 <span>Gallatin, Tennessee</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <Calendar className="w-3.5 h-3.5" />
+                <Calendar className="w-3.5 h-3.5 text-primary" />
                 <span>Graduated</span>
               </div>
             </div>
 
+            {/* Key subjects */}
             <div className="mt-6 pt-5 border-t border-border">
               <div className="flex items-center gap-2 mb-4">
                 <BookOpen className="w-4 h-4 text-primary" />
@@ -77,12 +84,12 @@ const EducationSection = () => {
                 {subjects.map((subject, i) => (
                   <motion.span
                     key={subject}
-                    initial={{ opacity: 0, scale: 0.8 }}
+                    initial={{ opacity: 0, scale: 0.85 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.04, duration: 0.3 }}
-                    whileHover={{ scale: 1.08, borderColor: "hsl(141, 73%, 42%)" }}
-                    className="text-xs px-3 py-1.5 rounded-full bg-surface-highlight text-muted-foreground border border-border cursor-default transition-colors"
+                    whileHover={{ scale: 1.07 }}
+                    className="text-xs px-3 py-1.5 rounded-full bg-surface-highlight text-muted-foreground border border-border cursor-default transition-all duration-200 hover:border-primary/40 hover:text-foreground"
                   >
                     {subject}
                   </motion.span>

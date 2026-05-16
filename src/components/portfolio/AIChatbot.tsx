@@ -65,14 +65,29 @@ const KNOWLEDGE: KnowledgeEntry[] = [
       "Daniel built **4 competitive mobile games** at HypGames using Unity + C#:\n\n🎯 Sniper Strike: Special Ops\n🪖 War Sniper: FPS Shooting Game\n🎱 8 Ball Smash: Pool & Billiards\n🎣 Fishing Clash: Catching Fish\n\nAll featured real-time 1v1 multiplayer, leaderboards, and battle-pass progression systems.",
   },
   {
-    patterns: [/ai|automation|langchain|openai|claude|chatbot|machine learning|llm|gpt/i],
+    patterns: [/ai|automation|langchain|openai|claude|chatbot|machine learning|llm|gpt|zapier|n8n|make|workflow/i],
     response:
-      "Daniel is actively building in the AI space:\n\n🤖 **AutoFlow AI** — no-code workflow automation with LangChain + OpenAI\n💬 **SmartBot Studio** — custom chatbot builder using the Claude API\n\nHe's skilled in Python, FastAPI, and integrating LLMs into production applications.",
+      "Daniel covers the full automation spectrum — from no-code platforms to custom LLM engineering:\n\n**No-code & Platform Automation**\n• Zapier · n8n · Make (Integromat) · HubSpot Automation\n\n**CRM Implementation & Customisation**\n• GoHighLevel · Kommo (amoCRM) · Odoo · Zoho CRM · HubSpot CRM\n\n**Custom AI & Code-based Automation**\n• LLM integration (OpenAI / Claude) via LangChain\n• Event-driven pipelines: webhooks, queues, scheduled runs\n• FastAPI AI backends — built on 10 yrs of API orchestration\n\n🤖 **AutoFlow AI** — production workflow automation platform\n💬 **SmartBot Studio** — vector-KB AI chatbot SaaS",
+  },
+  {
+    patterns: [/zapier|n8n|make|integromat|crm|kommo|gohighlevel|odoo|zoho|hubspot|amocrm/i],
+    response:
+      "Daniel is proficient with major automation and CRM platforms:\n\n**Automation Tools**\n• Zapier — multi-step zap workflows, app integrations\n• n8n — self-hosted automation with custom nodes\n• Make (Integromat) — visual scenario builder\n• HubSpot Automation — marketing workflows & sequences\n\n**CRM Platforms**\n• GoHighLevel — full agency/sales funnel management\n• Kommo (amoCRM) — pipeline & lead automation\n• Odoo — ERP + CRM customisation\n• Zoho CRM — workflow rules, blueprints & integrations\n• HubSpot CRM — contact management & deal pipelines\n\nHe connects these platforms with custom code when the built-in tools aren't enough.",
   },
   {
     patterns: [/web|saas|react|next|typescript|node|backend|full.?stack|frontend/i],
     response:
       "Daniel's web & full-stack capabilities:\n\n**Frontend:** React 18 · Next.js 14 · TypeScript · Tailwind CSS\n**Backend:** Node.js · Express · tRPC · REST · GraphQL\n**Database:** PostgreSQL · Supabase · Firebase · MongoDB\n**Auth & Payments:** Clerk · Auth.js · Stripe · Paddle",
+  },
+  {
+    patterns: [/desktop|electron|windows|wpf|c#|winui|native app|exe|installer|pos|point.?of.?sale/i],
+    response:
+      "Daniel builds both cross-platform and native Windows desktop software:\n\n**Cross-platform (Electron + React)**\n• Full IPC architecture (main ↔ renderer processes)\n• AES-256 encrypted local SQLite storage\n• Squirrel auto-updater for Windows, macOS & Linux\n• System tray, file-system watchers, native OS dialogs\n\n**Native Windows (C# / WPF / WinUI 3 / .NET 8)**\n• MVVM architecture with dependency injection\n• SQL Server backend via Entity Framework\n• Barcode scanner / HID peripheral integration\n• Thermal receipt printing (ESC/POS protocol)\n• NSIS installer with silent enterprise update\n\n**Featured projects:**\n🖥️ **DevSync Desktop** — cross-platform developer toolkit\n🏪 **StockPulse POS** — Windows retail point-of-sale system\n📋 **DataForm Pro** — enterprise data-entry with PDF reporting",
+  },
+  {
+    patterns: [/ecommerce|e-commerce|shop|store|marketplace|stripe|payment|checkout|cart|woocommerce|shopify|vendor|billing|subscription/i],
+    response:
+      "Daniel has built full commerce systems end to end:\n\n**Storefront & Catalogue**\n• Variant-aware product catalogues, search & filters\n• Persistent cart with offline support\n• Headless Shopify & WooCommerce storefronts\n\n**Payments & Billing**\n• Stripe: Checkout, Payment Intents, webhooks, subscriptions\n• PayPal · Apple Pay · Google Pay (mobile SDK)\n• Stripe Connect for multi-vendor split payments\n\n**Advanced Commerce Features**\n• Multi-vendor marketplace: seller onboarding, KYC, commission engine\n• Escrow payout scheduling & buyer dispute resolution\n• Loyalty points, discount codes & tier pricing\n• Order fulfilment emails, inventory tracking & sales analytics\n\n**Featured projects:**\n🛒 **ShopForge** — full-stack e-commerce platform\n🏪 **VendorHub** — Stripe Connect multi-vendor marketplace\n📱 **NexCart** — iOS & Android commerce app",
   },
   {
     patterns: [/rate|price|cost|charge|fee|budget|quote/i],

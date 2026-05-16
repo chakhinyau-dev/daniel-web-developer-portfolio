@@ -23,10 +23,10 @@ interface FilterOption {
 const FILTERS: FilterOption[] = [
   { key: 'all',       label: 'All Projects',   icon: LayoutGrid,   colorVar: 'hsl(263 85% 68%)' },
   { key: 'mobile',    label: 'Mobile Apps',    icon: Smartphone,   colorVar: 'hsl(263 85% 68%)' },
-  { key: 'unity',     label: 'Unity / Games',  icon: Gamepad2,     colorVar: 'hsl(25 95% 60%)'  },
   { key: 'web-saas',  label: 'Web SaaS',       icon: Globe,        colorVar: 'hsl(185 100% 45%)'},
-  { key: 'ecommerce', label: 'E-commerce',     icon: ShoppingBag,  colorVar: 'hsl(340 80% 65%)' },
   { key: 'ai',        label: 'AI Automation',  icon: Bot,          colorVar: 'hsl(145 70% 50%)' },
+  { key: 'ecommerce', label: 'E-commerce',     icon: ShoppingBag,  colorVar: 'hsl(340 80% 65%)' },
+  { key: 'unity',     label: 'Unity / Games',  icon: Gamepad2,     colorVar: 'hsl(25 95% 60%)'  },
   { key: 'desktop',   label: 'Desktop',        icon: Monitor,      colorVar: 'hsl(50 90% 55%)'  },
 ];
 
@@ -344,8 +344,6 @@ const ProjectCatalog = () => {
     setModalProject(project);
     setModalScreenshots(screenshots);
   };
-
-  const activeColor = FILTERS.find(f => f.key === activeFilter)?.colorVar ?? 'hsl(263 85% 68%)';
 
   return (
     <>
