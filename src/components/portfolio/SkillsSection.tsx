@@ -3,6 +3,7 @@ import {
   Smartphone, Globe, Gamepad2, Server, Bot, Monitor,
   Blocks, Cloud, TestTube, Zap, Users,
 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // ─── Skill data ───────────────────────────────────────────────────────────────
 
@@ -152,8 +153,21 @@ const skillCategories: Category[] = [
 // ─── Component ────────────────────────────────────────────────────────────────
 
 const SkillsSection = () => {
+  const { tr } = useLanguage();
   const featured  = skillCategories.filter((c) => c.featured);
   const secondary = skillCategories.filter((c) => !c.featured);
+
+  const catTitleMap: Record<string, string> = {
+    "Mobile Development":    tr.skills.categories.mobile,
+    "Web & Full-Stack":      tr.skills.categories.web,
+    "Unity / Game Dev":      tr.skills.categories.unity,
+    "AI & Automation":       tr.skills.categories.ai,
+    "Desktop & Native":      tr.skills.categories.desktop,
+    "E-commerce & Payments": tr.skills.categories.ecommerce,
+    "Architecture & Patterns": tr.skills.categories.architecture,
+    "Cloud & DevOps":        tr.skills.categories.cloud,
+    "Testing & Tools":       tr.skills.categories.testing,
+  };
 
   return (
     <motion.section
@@ -171,10 +185,10 @@ const SkillsSection = () => {
           viewport={{ once: true }}
           className="text-2xl font-bold text-gradient"
         >
-          Technical Skills
+          {tr.skills.title}
         </motion.h2>
         <p className="text-sm text-muted-foreground mt-1">
-          Full-stack expertise across mobile, web, games, AI, desktop, and cloud.
+          {tr.skills.subtitle}
         </p>
       </div>
 
@@ -212,13 +226,13 @@ const SkillsSection = () => {
                 >
                   <cat.icon className="w-5 h-5" style={{ color: cat.color }} />
                 </div>
-                <h3 className="text-base font-semibold text-foreground">{cat.title}</h3>
+                <h3 className="text-base font-semibold text-foreground">{catTitleMap[cat.title] ?? cat.title}</h3>
               </div>
               <span
                 className="text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full font-semibold"
                 style={{ color: cat.color, background: `${cat.color}15`, border: `1px solid ${cat.color}30` }}
               >
-                Core
+                {tr.skills.coreBadge}
               </span>
             </div>
 
@@ -262,7 +276,7 @@ const SkillsSection = () => {
               <div className="w-6 h-6 rounded-md flex items-center justify-center" style={{ background: `${GREEN}18`, border: `1px solid ${GREEN}30` }}>
                 <Zap className="w-3.5 h-3.5" style={{ color: GREEN }} />
               </div>
-              <p className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: GREEN }}>Automation Tools</p>
+              <p className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: GREEN }}>{tr.skills.automationTitle}</p>
             </div>
             <div className="flex flex-col gap-2">
               {[
@@ -290,7 +304,7 @@ const SkillsSection = () => {
               <div className="w-6 h-6 rounded-md flex items-center justify-center" style={{ background: `${PINK}18`, border: `1px solid ${PINK}30` }}>
                 <Users className="w-3.5 h-3.5" style={{ color: PINK }} />
               </div>
-              <p className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: PINK }}>CRM Platforms</p>
+              <p className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: PINK }}>{tr.skills.crmTitle}</p>
             </div>
             <div className="flex flex-col gap-2">
               {[
@@ -319,7 +333,7 @@ const SkillsSection = () => {
               <div className="w-6 h-6 rounded-md flex items-center justify-center" style={{ background: `${CYAN}18`, border: `1px solid ${CYAN}30` }}>
                 <Globe className="w-3.5 h-3.5" style={{ color: CYAN }} />
               </div>
-              <p className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: CYAN }}>CMS & Website Builders</p>
+              <p className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: CYAN }}>{tr.skills.cmsTitle}</p>
             </div>
             <div className="flex flex-col gap-2">
               {[
@@ -367,7 +381,7 @@ const SkillsSection = () => {
               >
                 <cat.icon className="w-4 h-4" style={{ color: cat.color }} />
               </div>
-              <h3 className="text-sm font-bold text-foreground">{cat.title}</h3>
+              <h3 className="text-sm font-bold text-foreground">{catTitleMap[cat.title] ?? cat.title}</h3>
             </div>
 
             <ul className="relative space-y-2">

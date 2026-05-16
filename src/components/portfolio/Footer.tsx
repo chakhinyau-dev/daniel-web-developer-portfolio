@@ -1,23 +1,26 @@
 import { motion } from "framer-motion";
 import { MapPin, Code2, ArrowUpRight } from "lucide-react";
 import { profile } from "@/data/portfolio";
-
-const navLinks = [
-  { label: "Services",       href: "#services" },
-  { label: "Skills",         href: "#skills" },
-  { label: "Education",      href: "#education" },
-  { label: "Certifications", href: "#certifications" },
-  { label: "Projects",       href: "#projects" },
-];
-
-const stats = [
-  { value: "12+",                   label: "Years" },
-  { value: `${profile.totalApps}+`, label: "Products shipped" },
-  { value: "6",                     label: "Disciplines" },
-  { value: "36",                    label: "Projects in catalog" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { tr } = useLanguage();
+
+  const navLinks = [
+    { label: tr.nav.services,       href: "#services" },
+    { label: tr.nav.skills,         href: "#skills" },
+    { label: tr.nav.education,      href: "#education" },
+    { label: tr.nav.certifications, href: "#certifications" },
+    { label: tr.nav.projects,       href: "#projects" },
+  ];
+
+  const stats = [
+    { value: "12+",                   label: tr.footer.stats.years },
+    { value: `${profile.totalApps}+`, label: tr.footer.stats.products },
+    { value: "6",                     label: tr.footer.stats.disciplines },
+    { value: "36",                    label: tr.footer.stats.catalog },
+  ];
+
   const handleNav = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
@@ -65,7 +68,7 @@ const Footer = () => {
           >
             <p className="text-xl font-extrabold tracking-tight text-gradient">DR.</p>
             <p className="text-sm text-muted-foreground mt-2 leading-relaxed max-w-xs" style={{ textWrap: "pretty" as never }}>
-              Senior Full-Stack Developer building mobile apps, games, web platforms, AI tools, and desktop software for over a decade.
+              {tr.footer.description}
             </p>
             <div className="flex items-center gap-1.5 mt-3 text-xs text-muted-foreground">
               <MapPin className="w-3 h-3 text-primary" />
@@ -83,7 +86,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <p className="text-xs uppercase tracking-wider text-muted-foreground/60 font-medium mb-4">Navigation</p>
+            <p className="text-xs uppercase tracking-wider text-muted-foreground/60 font-medium mb-4">{tr.footer.navLabel}</p>
             <ul className="space-y-2.5">
               {navLinks.map((link) => (
                 <li key={link.label}>
@@ -105,10 +108,10 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="py-5 border-t border-border/30 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-[11px] text-muted-foreground/60">
-            © {new Date().getFullYear()} Daniel Ray. All rights reserved.
+            © {new Date().getFullYear()} Daniel Ray. {tr.footer.allRights}
           </p>
           <div className="flex items-center gap-1 text-[11px] text-muted-foreground/60">
-            <span>Designed & built with</span>
+            <span>{tr.footer.builtWith}</span>
             <motion.span
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
@@ -116,7 +119,7 @@ const Footer = () => {
             >
               ♥
             </motion.span>
-            <span>in Lafayette, TN</span>
+            <span>{tr.footer.inLocation}</span>
           </div>
         </div>
       </div>

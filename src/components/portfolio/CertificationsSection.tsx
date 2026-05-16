@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle, ShieldCheck, BadgeCheck } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import codingSpeedSilver2018 from "@/assets/certifications/coding-speed-silver-2018.png";
 import dartTopPercent2021 from "@/assets/certifications/dart-top-1-percent-2021.png";
 import dartWithHonors2022 from "@/assets/certifications/dart-with-honors-2022.png";
@@ -100,6 +101,7 @@ const certifications: CertificationItem[] = [
 ];
 
 const CertificationsSection = () => {
+  const { tr } = useLanguage();
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -115,10 +117,10 @@ const CertificationsSection = () => {
           viewport={{ once: true }}
           className="text-2xl font-bold text-gradient"
         >
-          Certifications
+          {tr.certifications.title}
         </motion.h2>
         <p className="text-sm text-muted-foreground mt-1">
-          Verified credentials from Google and CodinGame spanning Android, TypeScript, Dart, Python, and C++.
+          {tr.certifications.subtitle}
         </p>
       </div>
 
@@ -155,7 +157,7 @@ const CertificationsSection = () => {
                 </motion.div>
                 <div className="flex-1">
                   <h3 className="text-sm font-bold text-foreground leading-tight">{cert.name}</h3>
-                  <p className="text-xs text-primary mt-0.5 font-medium">Issued by {cert.issuer}</p>
+                  <p className="text-xs text-primary mt-0.5 font-medium">{tr.certifications.issuedBy} {cert.issuer}</p>
                 </div>
               </div>
 

@@ -1,20 +1,9 @@
 import { motion } from "framer-motion";
 import { GraduationCap, MapPin, Calendar, BookOpen } from "lucide-react";
-
-const subjects = [
-  "Software Engineering",
-  "Data Structures & Algorithms",
-  "Mobile Computing",
-  "Web Development",
-  "Database Systems",
-  "Computer Networks",
-  "Operating Systems",
-  "Object-Oriented Programming",
-  "Human-Computer Interaction",
-  "AI & Machine Learning Fundamentals",
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const EducationSection = () => {
+  const { tr } = useLanguage();
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -30,10 +19,10 @@ const EducationSection = () => {
           viewport={{ once: true }}
           className="text-2xl font-bold text-gradient"
         >
-          Education
+          {tr.education.title}
         </motion.h2>
         <p className="text-sm text-muted-foreground mt-1">
-          Academic foundation for a full-stack engineering career.
+          {tr.education.subtitle}
         </p>
       </div>
 
@@ -60,7 +49,7 @@ const EducationSection = () => {
           <div className="flex-1">
             <h3 className="text-lg font-bold text-foreground">Volunteer State Community College</h3>
             <p className="text-sm text-muted-foreground mt-1">
-              Associate Degree · Computer Science / Information Technology
+              {tr.education.degree}
             </p>
 
             <div className="flex flex-wrap gap-4 mt-3 text-sm text-muted-foreground">
@@ -70,7 +59,7 @@ const EducationSection = () => {
               </div>
               <div className="flex items-center gap-1.5">
                 <Calendar className="w-3.5 h-3.5 text-primary" />
-                <span>Graduated</span>
+                <span>{tr.education.graduated}</span>
               </div>
             </div>
 
@@ -78,10 +67,10 @@ const EducationSection = () => {
             <div className="mt-6 pt-5 border-t border-border">
               <div className="flex items-center gap-2 mb-4">
                 <BookOpen className="w-4 h-4 text-primary" />
-                <h4 className="text-sm font-semibold text-foreground">Key Areas of Study</h4>
+                <h4 className="text-sm font-semibold text-foreground">{tr.education.keyAreas}</h4>
               </div>
               <div className="flex flex-wrap gap-2">
-                {subjects.map((subject, i) => (
+                {tr.education.subjects.map((subject, i) => (
                   <motion.span
                     key={subject}
                     initial={{ opacity: 0, scale: 0.85 }}
@@ -101,7 +90,7 @@ const EducationSection = () => {
             <div className="mt-6 pt-5 border-t border-border">
               <div className="flex items-center gap-2 mb-3">
                 <MapPin className="w-4 h-4 text-primary" />
-                <h4 className="text-sm font-semibold text-foreground">Campus Location</h4>
+                <h4 className="text-sm font-semibold text-foreground">{tr.education.campusLocation}</h4>
               </div>
               <motion.div
                 initial={{ opacity: 0, y: 12 }}

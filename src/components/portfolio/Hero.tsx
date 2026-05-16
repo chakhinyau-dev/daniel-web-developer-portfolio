@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { MapPin, GraduationCap, Award, Code2, ExternalLink, Layers } from "lucide-react";
 import { profile } from "@/data/portfolio";
 import profileImg from "@/assets/profile.png";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -22,6 +23,7 @@ const itemVariants = {
 };
 
 const Hero = () => {
+  const { tr } = useLanguage();
   return (
     <div className="relative overflow-hidden aurora-bg">
       {/* ── Background orbs ─────────────────────────────────────────────── */}
@@ -106,7 +108,7 @@ const Hero = () => {
             }}
           >
             <Code2 className="w-3 h-3" />
-            Senior Full-Stack Developer
+            {tr.hero.badge}
           </div>
         </motion.div>
 
@@ -123,8 +125,8 @@ const Hero = () => {
             className="text-sm md:text-base text-muted-foreground max-w-lg mx-auto leading-relaxed"
             style={{ textWrap: "pretty" as never }}
           >
-            12 years building production-grade software across mobile, web, AI, and desktop.
-            Full-stack architect shipping React/Next.js SaaS platforms, scalable APIs, and real-time systems — delivering products that scale.
+            {tr.hero.bio1}{" "}
+            {tr.hero.bio2}
           </p>
         </motion.div>
 
@@ -155,7 +157,7 @@ const Hero = () => {
                   <path fill="#1ABCFE" d="M12 16h4c2.208 0 4-1.792 4-4s-1.792-4-4-4h-4v8z" />
                 </svg>
               </span>
-              <span className="tracking-tight">Figma portfolio</span>
+              <span className="tracking-tight">{tr.hero.figmaBtn}</span>
               <ExternalLink className="h-3.5 w-3.5 text-muted-foreground transition-colors group-hover:text-primary" />
             </span>
           </motion.a>
@@ -181,7 +183,7 @@ const Hero = () => {
                   <path d="M20.5 3h-17A.5.5 0 0 0 3 3.5v17a.5.5 0 0 0 .5.5h17a.5.5 0 0 0 .5-.5v-17a.5.5 0 0 0-.5-.5zm-2.3 5.8-3.6 8.4h-1.5l-1.6-5-1.6 5H8.4L4.8 8.8h1.7l2.4 6 1.7-5.1h1.8l1.7 5.1 2.4-6h1.7z" />
                 </svg>
               </span>
-              <span className="tracking-tight">Workana profile</span>
+              <span className="tracking-tight">{tr.hero.workanaBtn}</span>
               <ExternalLink className="h-3.5 w-3.5 text-muted-foreground transition-colors group-hover:text-[#00B189]" />
             </span>
           </motion.a>
@@ -227,10 +229,10 @@ const Hero = () => {
         {/* ── Stats ─────────────────────────────────────────────────────── */}
         <motion.div variants={itemVariants} className="flex items-baseline justify-center gap-10 md:gap-16">
           {[
-            { value: profile.totalYears,      label: "Years" },
-            { value: `${profile.totalApps}+`, label: "Products" },
-            { value: "6",                     label: "Disciplines" },
-            { value: "36",                    label: "Projects" },
+            { value: profile.totalYears,      label: tr.hero.stats.years },
+            { value: `${profile.totalApps}+`, label: tr.hero.stats.products },
+            { value: "6",                     label: tr.hero.stats.disciplines },
+            { value: "36",                    label: tr.hero.stats.projects },
           ].map(({ value, label }) => (
             <motion.div
               key={label}
@@ -253,12 +255,12 @@ const Hero = () => {
           className="mt-10 flex flex-wrap items-center justify-center gap-2"
         >
           {[
-            { label: "Mobile",        color: "hsl(263 85% 68%)" },
-            { label: "Web SaaS",      color: "hsl(185 100% 45%)" },
-            { label: "AI Automation", color: "hsl(145 70% 50%)" },
-            { label: "E-commerce",    color: "hsl(340 80% 65%)" },
-            { label: "Unity / Games", color: "hsl(25 95% 60%)"  },
-            { label: "Desktop",       color: "hsl(50 90% 55%)"  },
+            { label: tr.hero.chips.mobile,    color: "hsl(263 85% 68%)" },
+            { label: tr.hero.chips.webSaas,   color: "hsl(185 100% 45%)" },
+            { label: tr.hero.chips.ai,        color: "hsl(145 70% 50%)" },
+            { label: tr.hero.chips.ecommerce, color: "hsl(340 80% 65%)" },
+            { label: tr.hero.chips.unity,     color: "hsl(25 95% 60%)"  },
+            { label: tr.hero.chips.desktop,   color: "hsl(50 90% 55%)"  },
           ].map(({ label, color }) => (
             <span
               key={label}

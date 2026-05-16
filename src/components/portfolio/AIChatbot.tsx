@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, MessageSquare, Sparkles } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // ─── Knowledge base ───────────────────────────────────────────────────────────
 
@@ -106,24 +107,12 @@ const KNOWLEDGE: KnowledgeEntry[] = [
   },
 ];
 
-const FALLBACK =
-  "That's a great question! I can tell you about Daniel's **skills**, **experience**, **projects**, **availability**, **location**, **education**, or **languages**. What interests you?";
-
-const SUGGESTIONS = [
-  "What are your skills?",
-  "Are you available for hire?",
-  "Tell me about your projects",
-  "What's your tech stack?",
-  "Where are you based?",
-  "What certifications do you have?",
-];
-
-function getResponse(input: string): string {
+function getResponse(input: string, fallback: string): string {
   const lower = input.toLowerCase().trim();
   for (const entry of KNOWLEDGE) {
     if (entry.patterns.some((re) => re.test(lower))) return entry.response;
   }
-  return FALLBACK;
+  return fallback;
 }
 
 // ─── Markdown-lite renderer ───────────────────────────────────────────────────
@@ -163,19 +152,16 @@ interface Message {
   partial?: boolean;
 }
 
-const GREETING: Message = {
-  id: 0,
-  role: "bot",
-  text: "Hi! I'm **Ray**, Daniel's AI assistant. Ask me anything about his skills, projects, experience, or availability! 🚀",
-};
-
 let msgId = 1;
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
 const AIChatbot = () => {
+  const { tr } = useLanguage();
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([GREETING]);
+  const [messages, setMessages] = useState<Message[]>([
+    { id: 0, role: "bot", text: tr.chatbot.greeting },
+  ]);
   const [input, setInput] = useState("");
   const [typing, setTyping] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
@@ -192,6 +178,14 @@ const AIChatbot = () => {
     if (open) setTimeout(() => inputRef.current?.focus(), 350);
   }, [open]);
 
+  useEffect(() => {
+    setMessages((prev) =>
+      prev[0]?.id === 0
+        ? [{ ...prev[0], text: tr.chatbot.greeting }, ...prev.slice(1)]
+        : prev
+    );
+  }, [tr.chatbot.greeting]);
+
   const sendMessage = useCallback(
     (text: string) => {
       const trimmed = text.trim();
@@ -202,7 +196,7 @@ const AIChatbot = () => {
       setInput("");
       setTyping(true);
 
-      const fullResponse = getResponse(trimmed);
+      const fullResponse = getResponse(trimmed, tr.chatbot.fallback);
       const delay = 700 + Math.min(fullResponse.length * 2, 800);
 
       // Show typing indicator, then stream the response
@@ -226,7 +220,7 @@ const AIChatbot = () => {
         }, 14);
       }, delay);
     },
-    [typing]
+    [typing, tr.chatbot.fallback]
   );
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -300,7 +294,7 @@ const AIChatbot = () => {
                   <p className="text-sm font-bold text-foreground leading-none">Ray</p>
                   <Sparkles className="w-3 h-3 text-violet-400" />
                 </div>
-                <p className="text-[11px] text-muted-foreground mt-0.5 leading-none">Daniel's AI Assistant · Online</p>
+                <p className="text-[11px] text-muted-foreground mt-0.5 leading-none">{tr.chatbot.assistantLabel}</p>
               </div>
 
               <button
@@ -384,7 +378,7 @@ const AIChatbot = () => {
 
             {/* Quick replies */}
             <div className="px-3 py-2 flex gap-1.5 overflow-x-auto no-scrollbar shrink-0" style={{ borderTop: "1px solid hsl(221 18% 14%)" }}>
-              {SUGGESTIONS.filter((s) => !messages.some((m) => m.role === "user" && m.text === s))
+              {(tr.chatbot.suggestions as readonly string[]).filter((s) => !messages.some((m) => m.role === "user" && m.text === s))
                 .slice(0, 3)
                 .map((s) => (
                   <button
@@ -412,7 +406,7 @@ const AIChatbot = () => {
                 ref={inputRef}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask me anything…"
+                placeholder={tr.chatbot.placeholder}
                 disabled={typing}
                 className="flex-1 text-[13px] px-3.5 py-2.5 rounded-xl bg-surface-highlight border border-border text-foreground placeholder:text-muted-foreground/50 outline-none focus:border-primary/50 transition-colors disabled:opacity-50"
               />
