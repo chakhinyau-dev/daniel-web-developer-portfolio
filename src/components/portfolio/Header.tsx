@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { Globe } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import type { Lang } from "@/i18n/translations";
 
@@ -69,7 +70,8 @@ const Header = () => {
 
         {/* Nav + Lang switcher */}
         <div className="flex items-center gap-2">
-          <nav className="flex items-center gap-0.5">
+          {/* Nav links — hidden on mobile */}
+          <nav className="hidden md:flex items-center gap-0.5">
             {navItems.map((item, i) => {
               const isActive = activeSection === item.href.slice(1);
               return (
@@ -107,15 +109,14 @@ const Header = () => {
             })}
           </nav>
 
-          {/* Language switcher */}
-          <div
-            className="flex items-center gap-0.5 ml-2 pl-2 border-l border-border/50"
-          >
+          {/* Language switcher — always visible */}
+          <div className="flex items-center gap-1 md:ml-2 md:pl-2 md:border-l md:border-border/50">
+            <Globe className="w-3 h-3 text-muted-foreground/50 shrink-0" />
             {LANGS.map(({ code, label }) => (
               <button
                 key={code}
                 onClick={() => setLang(code)}
-                className={`text-[10px] font-bold px-2 py-1 rounded-md transition-all duration-200 ${
+                className={`text-[11px] font-bold px-2 py-1 rounded-md transition-all duration-200 ${
                   lang === code
                     ? "text-primary bg-primary/10 border border-primary/25"
                     : "text-muted-foreground hover:text-foreground"

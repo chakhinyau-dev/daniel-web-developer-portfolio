@@ -192,6 +192,13 @@ const t = {
       fallback: "That's a great question! I can tell you about Daniel's **skills**, **experience**, **projects**, **availability**, **location**, **education**, or **languages**. What interests you?",
       assistantLabel: "Daniel's AI Assistant · Online",
     },
+    hire: {
+      tag: "Hire Me",
+      modalTitle: "Let's Work Together",
+      modalBody: "Thank you for your interest in working together! 🙏\n\nMy journey on Workana is just beginning — but behind this new profile stand over 12 years of real, production-grade development across mobile, web, AI, and desktop.\n\nI am fully confident that — backed by that decade of experience — I can deliver the project you need at the highest possible standard of quality, craft, and professionalism.\n\nLet's build something great together.",
+      workanaBtn: "View Workana Profile",
+      close: "Maybe later",
+    },
   },
 
   // ── Spanish ──────────────────────────────────────────────────────────────────
@@ -386,6 +393,13 @@ const t = {
       fallback: "¡Buena pregunta! Puedo contarte sobre las **habilidades**, **experiencia**, **proyectos**, **disponibilidad**, **ubicación**, **educación** o **idiomas** de Daniel. ¿Qué te interesa?",
       assistantLabel: "Asistente IA de Daniel · En línea",
     },
+    hire: {
+      tag: "Contrátame",
+      modalTitle: "Trabajemos Juntos",
+      modalBody: "¡Gracias por tu interés en trabajar juntos! 🙏\n\nMi trayectoria en Workana recién comienza — pero detrás de este nuevo perfil hay más de 12 años de desarrollo real y de nivel producción en mobile, web, IA y escritorio.\n\nEstoy plenamente seguro de que — respaldado por esa experiencia — puedo entregarte el proyecto que necesitas con el más alto estándar de calidad, oficio y profesionalismo.\n\nCreemos algo grandioso juntos.",
+      workanaBtn: "Ver Perfil en Workana",
+      close: "Quizás después",
+    },
   },
 
   // ── Portuguese ───────────────────────────────────────────────────────────────
@@ -579,6 +593,13 @@ const t = {
       greeting: "Olá! Sou o **Ray**, assistente IA do Daniel. Pergunte-me sobre habilidades, projetos, experiência ou disponibilidade! 🚀",
       fallback: "Ótima pergunta! Posso falar sobre **habilidades**, **experiência**, **projetos**, **disponibilidade**, **localização**, **educação** ou **idiomas** do Daniel. O que te interessa?",
       assistantLabel: "Assistente IA do Daniel · Online",
+    },
+    hire: {
+      tag: "Contrate-me",
+      modalTitle: "Vamos Trabalhar Juntos",
+      modalBody: "Obrigado pelo seu interesse em trabalharmos juntos! 🙏\n\nMinha jornada no Workana está apenas começando — mas por trás deste novo perfil há mais de 12 anos de desenvolvimento real e de nível produção em mobile, web, IA e desktop.\n\nTenho plena confiança de que — apoiado por essa experiência — posso entregar o projeto que você precisa com o mais alto padrão de qualidade, excelência e profissionalismo.\n\nVamos construir algo incrível juntos.",
+      workanaBtn: "Ver Perfil no Workana",
+      close: "Talvez depois",
     },
   },
 } as const;

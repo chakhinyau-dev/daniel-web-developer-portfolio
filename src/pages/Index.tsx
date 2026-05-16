@@ -9,6 +9,7 @@ import ProjectCatalog from "@/components/portfolio/ProjectCatalog";
 import Footer from "@/components/portfolio/Footer";
 import ScrollToTop from "@/components/portfolio/ScrollToTop";
 import AIChatbot from "@/components/portfolio/AIChatbot";
+import HireTag from "@/components/portfolio/HireTag";
 
 const Index = () => {
   return (
@@ -35,6 +36,7 @@ const Index = () => {
         </div>
         <Footer />
         <ScrollToTop />
+        <HireTag />
         <AIChatbot />
       </main>
     </LanguageProvider>
