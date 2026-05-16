@@ -1,3 +1,11 @@
+import imgSweetspot  from '@/assets/web/Sweetspot-1-1773113888787.png';
+import imgModernsage from '@/assets/web/modernsaget_38-1773115450582.png';
+import imgAudience   from '@/assets/web/Screenshot_14-1773114272088.png';
+import imgJennifer   from '@/assets/web/image-1.png';
+import imgEarly2bed  from '@/assets/web/image-2.png';
+import imgBjutip     from '@/assets/web/image-3.png';
+import imgCricket    from '@/assets/web/image-4.png';
+
 export interface AppItem {
   name: string;
   category: string;
@@ -343,7 +351,7 @@ export const projects: ProjectItem[] = [
       'Audience segmentation & export reports',
       'Creator dashboard with revenue tracking',
     ],
-    image: '/assets/web/Sweetspot-1-1773113888787.png',
+    image: imgSweetspot,
     url: 'https://sweetspot.video/',
     year: '2023',
     status: 'live',
@@ -382,7 +390,7 @@ export const projects: ProjectItem[] = [
       'Stripe subscription billing with free trial flow',
       'Community discussion boards with role-gated access',
     ],
-    image: '/assets/web/modernsaget_38-1773115450582.png',
+    image: imgModernsage,
     url: 'https://modernsage.com/',
     year: '2024',
     status: 'live',
@@ -401,7 +409,7 @@ export const projects: ProjectItem[] = [
       'Attribution reporting across marketing channels',
       'CRM-ready CSV & REST API exports',
     ],
-    image: '/assets/web/Screenshot_14-1773114272088.png',
+    image: imgAudience,
     url: 'https://audienceadvisory.com/',
     year: '2024',
     status: 'live',
@@ -480,7 +488,7 @@ export const projects: ProjectItem[] = [
       'Loyalty rewards & subscription refill programme',
       'Klaviyo email automation for re-order campaigns',
     ],
-    image: '/assets/web/image-1.png',
+    image: imgJennifer,
     url: 'https://jenniferlay.com.au/',
     year: '2023',
     status: 'live',
@@ -499,7 +507,7 @@ export const projects: ProjectItem[] = [
       'Loyalty membership & reward points system',
       'Klaviyo-powered email flows for cart recovery',
     ],
-    image: '/assets/web/image-2.png',
+    image: imgEarly2bed,
     url: 'https://www.early2bed.com/',
     year: '2023',
     status: 'live',
@@ -557,7 +565,7 @@ export const projects: ProjectItem[] = [
       'Subscription sample programme (try before you buy)',
       'Brand editorial pages with storytelling content',
     ],
-    image: '/assets/web/image-3.png',
+    image: imgBjutip,
     url: 'https://www.bjutip.com/',
     year: '2024',
     status: 'live',
@@ -595,7 +603,7 @@ export const projects: ProjectItem[] = [
       'WhatsApp sales support integration',
       'PIX instant payment & Brazilian invoice (NF-e)',
     ],
-    image: '/assets/web/image-4.png',
+    image: imgCricket,
     url: 'https://www.cricketbrindes.com.br/',
     year: '2023',
     status: 'live',
@@ -789,7 +797,7 @@ export const profile = {
   location: "Lafayette, Tennessee, 37083",
   university: "Volunteer State Community College",
   languages: ["English","Spanish","Portuguese","German", "Japanese"],
-  headline: "12 Years. 6 Disciplines. 50+ Products.",
+  headline: "12 Years. 6 Disciplines. 100+ Products.",
   subheadline: "Senior Full-Stack Developer based in Lafayette, Tennessee. Vol State Alumnus. Specialising in mobile apps, Unity games, web SaaS, AI automation, e-commerce, and desktop software.",
   bio: "Full-stack engineer with 12 years of delivering robust, scalable products across mobile, web, gaming, AI, and desktop platforms. From Android and Unity to Next.js, LangChain, and Electron — I build software that ships.",
   certifications: [

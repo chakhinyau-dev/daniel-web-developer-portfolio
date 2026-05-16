@@ -23,7 +23,7 @@ const KNOWLEDGE: KnowledgeEntry[] = [
   {
     patterns: [/experience|year|career|histor|work|background|how long/i],
     response:
-      "Daniel has **12+ years** of professional experience:\n\n• 2021–2025 · Amazic Fun Hub — 7 Android apps\n• 2019–2021 · HypGames — 4 Unity mobile games\n• 2017–2018 · Manchester United Ltd — 2 Kotlin apps\n• 2016–2017 · Myarx Apps — 3 travel apps\n• 2014–2015 · MonetizeGo — 3 utility apps\n\nHe's shipped **50+ mobile products** and continues to grow into full-stack and AI development.",
+      "Daniel has **12+ years** of professional experience:\n\n• 2021–2025 · Amazic Fun Hub — 7 Android apps\n• 2019–2021 · HypGames — 4 Unity mobile games\n• 2017–2018 · Manchester United Ltd — 2 Kotlin apps\n• 2016–2017 · Myarx Apps — 3 travel apps\n• 2014–2015 · MonetizeGo — 3 utility apps\n\nHe's shipped **100+ mobile products** and continues to grow into full-stack and AI development.",
   },
   {
     patterns: [/project|portfolio|app|game|product|built|made|shipped|work/i],
