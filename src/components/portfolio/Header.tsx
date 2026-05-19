@@ -62,10 +62,44 @@ const Header = () => {
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.97 }}
-          className="text-sm font-extrabold tracking-tight"
+          className="flex items-center gap-1.5"
         >
-          <span className="text-gradient">DR</span>
-          <span className="text-primary">.</span>
+          {/* Rotating snowflake crystal logo mark */}
+          <motion.svg
+            width="20" height="20" viewBox="0 0 20 20"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            style={{ filter: "drop-shadow(0 0 3px hsl(200 100% 75% / 0.8))", flexShrink: 0 }}
+          >
+            <line x1="10" y1="10" x2="10"    y2="2"    stroke="hsl(200 100% 85%)" strokeWidth="1.2" strokeLinecap="round" />
+            <line x1="10" y1="10" x2="16.93" y2="6"    stroke="hsl(200 100% 85%)" strokeWidth="1.2" strokeLinecap="round" />
+            <line x1="10" y1="10" x2="16.93" y2="14"   stroke="hsl(200 100% 85%)" strokeWidth="1.2" strokeLinecap="round" />
+            <line x1="10" y1="10" x2="10"    y2="18"   stroke="hsl(200 100% 85%)" strokeWidth="1.2" strokeLinecap="round" />
+            <line x1="10" y1="10" x2="3.07"  y2="14"   stroke="hsl(200 100% 85%)" strokeWidth="1.2" strokeLinecap="round" />
+            <line x1="10" y1="10" x2="3.07"  y2="6"    stroke="hsl(200 100% 85%)" strokeWidth="1.2" strokeLinecap="round" />
+            <line x1="10"    y1="5"    x2="12.6"  y2="3.5"  stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+            <line x1="10"    y1="5"    x2="7.4"   y2="3.5"  stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+            <line x1="14.33" y1="7.5"  x2="16.93" y2="9"    stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+            <line x1="14.33" y1="7.5"  x2="14.33" y2="4.5"  stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+            <line x1="14.33" y1="12.5" x2="14.33" y2="15.5" stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+            <line x1="14.33" y1="12.5" x2="16.93" y2="11"   stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+            <line x1="10"    y1="15"   x2="7.4"   y2="16.5" stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+            <line x1="10"    y1="15"   x2="12.6"  y2="16.5" stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+            <line x1="5.67"  y1="12.5" x2="3.07"  y2="11"   stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+            <line x1="5.67"  y1="12.5" x2="5.67"  y2="15.5" stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+            <line x1="5.67"  y1="7.5"  x2="5.67"  y2="4.5"  stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+            <line x1="5.67"  y1="7.5"  x2="3.07"  y2="9"    stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+            <circle cx="10"    cy="2"  r="1.1" fill="hsl(200 100% 95%)" />
+            <circle cx="16.93" cy="6"  r="1.1" fill="hsl(200 100% 95%)" />
+            <circle cx="16.93" cy="14" r="1.1" fill="hsl(200 100% 95%)" />
+            <circle cx="10"    cy="18" r="1.1" fill="hsl(200 100% 95%)" />
+            <circle cx="3.07"  cy="14" r="1.1" fill="hsl(200 100% 95%)" />
+            <circle cx="3.07"  cy="6"  r="1.1" fill="hsl(200 100% 95%)" />
+            <circle cx="10"    cy="10" r="1.4" fill="hsl(200 100% 95%)" />
+          </motion.svg>
+          <span className="text-sm font-extrabold tracking-tight">
+            <span className="text-gradient">DR</span><span className="text-primary">.</span>
+          </span>
         </motion.a>
 
         {/* Nav + Lang switcher */}

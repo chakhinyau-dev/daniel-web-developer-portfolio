@@ -66,7 +66,42 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-xl font-extrabold tracking-tight text-gradient">DR.</p>
+            <div className="flex items-center gap-2">
+              {/* Rotating snowflake crystal logo mark */}
+              <motion.svg
+                width="26" height="26" viewBox="0 0 20 20"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                style={{ filter: "drop-shadow(0 0 4px hsl(200 100% 75% / 0.8))", flexShrink: 0 }}
+              >
+                <line x1="10" y1="10" x2="10"    y2="2"    stroke="hsl(200 100% 85%)" strokeWidth="1.2" strokeLinecap="round" />
+                <line x1="10" y1="10" x2="16.93" y2="6"    stroke="hsl(200 100% 85%)" strokeWidth="1.2" strokeLinecap="round" />
+                <line x1="10" y1="10" x2="16.93" y2="14"   stroke="hsl(200 100% 85%)" strokeWidth="1.2" strokeLinecap="round" />
+                <line x1="10" y1="10" x2="10"    y2="18"   stroke="hsl(200 100% 85%)" strokeWidth="1.2" strokeLinecap="round" />
+                <line x1="10" y1="10" x2="3.07"  y2="14"   stroke="hsl(200 100% 85%)" strokeWidth="1.2" strokeLinecap="round" />
+                <line x1="10" y1="10" x2="3.07"  y2="6"    stroke="hsl(200 100% 85%)" strokeWidth="1.2" strokeLinecap="round" />
+                <line x1="10"    y1="5"    x2="12.6"  y2="3.5"  stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="10"    y1="5"    x2="7.4"   y2="3.5"  stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="14.33" y1="7.5"  x2="16.93" y2="9"    stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="14.33" y1="7.5"  x2="14.33" y2="4.5"  stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="14.33" y1="12.5" x2="14.33" y2="15.5" stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="14.33" y1="12.5" x2="16.93" y2="11"   stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="10"    y1="15"   x2="7.4"   y2="16.5" stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="10"    y1="15"   x2="12.6"  y2="16.5" stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="5.67"  y1="12.5" x2="3.07"  y2="11"   stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="5.67"  y1="12.5" x2="5.67"  y2="15.5" stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="5.67"  y1="7.5"  x2="5.67"  y2="4.5"  stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="5.67"  y1="7.5"  x2="3.07"  y2="9"    stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <circle cx="10"    cy="2"  r="1.1" fill="hsl(200 100% 95%)" />
+                <circle cx="16.93" cy="6"  r="1.1" fill="hsl(200 100% 95%)" />
+                <circle cx="16.93" cy="14" r="1.1" fill="hsl(200 100% 95%)" />
+                <circle cx="10"    cy="18" r="1.1" fill="hsl(200 100% 95%)" />
+                <circle cx="3.07"  cy="14" r="1.1" fill="hsl(200 100% 95%)" />
+                <circle cx="3.07"  cy="6"  r="1.1" fill="hsl(200 100% 95%)" />
+                <circle cx="10"    cy="10" r="1.4" fill="hsl(200 100% 95%)" />
+              </motion.svg>
+              <p className="text-xl font-extrabold tracking-tight text-gradient">DR.</p>
+            </div>
             <p className="text-sm text-muted-foreground mt-2 leading-relaxed max-w-xs" style={{ textWrap: "pretty" as never }}>
               {tr.footer.description}
             </p>
