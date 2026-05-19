@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Send, MessageSquare, Sparkles } from "lucide-react";
+import { X, Send, Snowflake } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 // ─── Knowledge base ───────────────────────────────────────────────────────────
@@ -31,7 +31,7 @@ const KNOWLEDGE: KnowledgeEntry[] = [
       "Some highlights from Daniel's portfolio:\n\n🎮 **Sniper Strike** — Unity 1v1 shooter\n📱 **Man Utd App** — official Kotlin streaming app\n🗺 **GPS Tracker** — family safety with live maps\n🛒 **ShopForge** — Next.js + Stripe e-commerce\n🤖 **AutoFlow AI** — LangChain workflow automation\n\nBrowse the **Project Catalog** section to filter by category!",
   },
   {
-    patterns: [/hire|available|work|freelance|contract|remote|opportunit|open|looking/i],
+    patterns: [/hire|available|freelance|contract|remote|opportunit|open|looking/i],
     response:
       "Daniel is currently **open to opportunities**:\n\n✅ Freelance & contract work (via Workana)\n✅ Full-time remote roles\n✅ Short or long-term projects\n\nHis Workana profile shows real-time availability. Click the link in the hero to get in touch!",
   },
@@ -41,14 +41,14 @@ const KNOWLEDGE: KnowledgeEntry[] = [
       "You can reach Daniel through:\n\n• **Workana** — freelancer profile (linked at the top of the page)\n• **Figma** — design portfolio (also linked)\n\nHe typically responds within **24 hours** ⚡",
   },
   {
-    patterns: [/locat|where|based|timezone|city|state|tennessee|lafayette/i],
+    patterns: [/locat|where|based|timezone|city|state|manila|philippines|tennessee|lafayette/i],
     response:
-      "Daniel is based in **Lafayette, Tennessee** 🇺🇸 (Central Time).\n\nHe works **100% remote** and has delivered projects for clients across the US, Europe, Latin America, and Asia.",
+      "Daniel is based in **Manila, Philippines** 🇵🇭 (Philippine Standard Time, UTC+8).\n\nHe works **100% remote** and has delivered projects for clients across the US, Europe, Latin America, and Asia.",
   },
   {
-    patterns: [/educ|school|college|universit|degree|certif|credential|award/i],
+    patterns: [/educ|school|college|universit|degree|certif|credential|award|dlsu|de la salle/i],
     response:
-      "**Education:**\n🎓 Volunteer State Community College — Gallatin, TN\n\n**Certifications:**\n🏆 Google Associate Android Developer\n🏆 Google Certified App Developer\n🥇 CodinGame Dart — Top 1% globally\n🥇 CodinGame Dart — with Honors\n• CodinGame TypeScript\n• CodinGame C++\n• CodinGame Python 3",
+      "**Education:**\n🎓 De La Salle University (DLSU) — Manila, Philippines\n\n**Certifications:**\n🏆 Google Associate Android Developer\n🏆 Google Certified App Developer\n🥇 CodinGame Dart — Top 1% globally\n🥇 CodinGame Dart — with Honors\n• CodinGame TypeScript\n• CodinGame C++\n• CodinGame Python 3",
   },
   {
     patterns: [/language|speak|english|spanish|portuguese|german|japanese|multilingual/i],
@@ -98,7 +98,7 @@ const KNOWLEDGE: KnowledgeEntry[] = [
   {
     patterns: [/who are you|what are you|tell me about (yourself|daniel|him)/i],
     response:
-      "I'm **Ray**, Daniel's AI portfolio assistant! 🤖\n\nDaniel Ray is a **Senior Full-Stack Developer** from Lafayette, Tennessee. He has 12+ years building mobile apps, Unity games, web SaaS platforms, AI automation tools, and desktop applications.\n\nHe's passionate about clean architecture, pixel-perfect UIs, and shipping products that actually get used. What aspect of his work interests you?",
+      "I'm **Ray**, Daniel's AI portfolio assistant! 🤖\n\nDaniel Ray is a **Senior Full-Stack Developer** from Manila, Philippines 🇵🇭. He has 12+ years building mobile apps, Unity games, web SaaS platforms, AI automation tools, and desktop applications.\n\nHe's passionate about clean architecture, pixel-perfect UIs, and shipping products that actually get used. What aspect of his work interests you?",
   },
   {
     patterns: [/thank|thanks|great|awesome|nice|good|cool|perfect/i],
@@ -230,28 +230,88 @@ const AIChatbot = () => {
 
   return (
     <>
-      {/* ── Floating trigger button ──────────────────────────────────────── */}
+      {/* ── Floating trigger button (snowflake crystal) ─────────────────────── */}
       <motion.button
         aria-label={open ? "Close chat" : "Chat with Ray, Daniel's AI assistant"}
         onClick={() => setOpen((o) => !o)}
-        whileHover={{ scale: 1.08 }}
+        whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.93 }}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-        style={{
-          background: "linear-gradient(135deg, hsl(263 85% 68%), hsl(185 100% 45%))",
-          boxShadow: "0 0 0 0 hsl(263 85% 68% / 0.6)",
-          animation: open ? "none" : "glow-pulse 2.5s ease-in-out infinite",
-        }}
+        className="fixed bottom-6 left-6 z-50 w-14 h-14 flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
       >
         <AnimatePresence mode="wait">
           {open ? (
-            <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.18 }}>
+            <motion.div
+              key="close"
+              initial={{ rotate: -90, opacity: 0, scale: 0.5 }}
+              animate={{ rotate: 0, opacity: 1, scale: 1 }}
+              exit={{ rotate: 90, opacity: 0, scale: 0.5 }}
+              transition={{ duration: 0.2 }}
+              className="w-14 h-14 rounded-full flex items-center justify-center"
+              style={{ background: "linear-gradient(135deg, hsl(200 100% 50%), hsl(195 80% 62%))", boxShadow: "0 4px 20px hsl(200 100% 68% / 0.5)" }}
+            >
               <X className="w-6 h-6 text-white" />
             </motion.div>
           ) : (
-            <motion.div key="chat" initial={{ scale: 0.6, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.6, opacity: 0 }} transition={{ duration: 0.18 }} className="relative">
-              <MessageSquare className="w-6 h-6 text-white" />
-              <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-background" />
+            <motion.div
+              key="crystal"
+              initial={{ scale: 0.5, opacity: 0, rotate: -60 }}
+              animate={{ scale: 1, opacity: 1, rotate: 0 }}
+              exit={{ scale: 0.5, opacity: 0, rotate: 60 }}
+              transition={{ duration: 0.25 }}
+              className="relative w-14 h-14 flex items-center justify-center"
+            >
+              {/* Pulsing glow backdrop */}
+              <div
+                className="absolute inset-0 rounded-full"
+                style={{
+                  background: "radial-gradient(circle, hsl(200 100% 68% / 0.25) 0%, transparent 70%)",
+                  animation: "glow-pulse 2.5s ease-in-out infinite",
+                }}
+              />
+              {/* Rotating snowflake crystal */}
+              <motion.svg
+                width="54" height="54" viewBox="0 0 56 56"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+                style={{ filter: "drop-shadow(0 0 5px hsl(200 100% 78% / 0.85)) drop-shadow(0 0 14px hsl(200 100% 68% / 0.55))" }}
+              >
+                {/* 6 main arms */}
+                <line x1="28" y1="28" x2="28"   y2="7"    stroke="white" strokeWidth="2"   strokeLinecap="round" opacity="0.95" />
+                <line x1="28" y1="28" x2="46.2" y2="17.5" stroke="white" strokeWidth="2"   strokeLinecap="round" opacity="0.95" />
+                <line x1="28" y1="28" x2="46.2" y2="38.5" stroke="white" strokeWidth="2"   strokeLinecap="round" opacity="0.95" />
+                <line x1="28" y1="28" x2="28"   y2="49"   stroke="white" strokeWidth="2"   strokeLinecap="round" opacity="0.95" />
+                <line x1="28" y1="28" x2="9.8"  y2="38.5" stroke="white" strokeWidth="2"   strokeLinecap="round" opacity="0.95" />
+                <line x1="28" y1="28" x2="9.8"  y2="17.5" stroke="white" strokeWidth="2"   strokeLinecap="round" opacity="0.95" />
+                {/* Branches — top arm (branch at y=14) */}
+                <line x1="28"   y1="14" x2="34.1" y2="10.5" stroke="white" strokeWidth="1.3" strokeLinecap="round" opacity="0.75" />
+                <line x1="28"   y1="14" x2="21.9" y2="10.5" stroke="white" strokeWidth="1.3" strokeLinecap="round" opacity="0.75" />
+                {/* Branches — upper-right arm */}
+                <line x1="40.1" y1="21" x2="46.2" y2="24.5" stroke="white" strokeWidth="1.3" strokeLinecap="round" opacity="0.75" />
+                <line x1="40.1" y1="21" x2="40.1" y2="14"   stroke="white" strokeWidth="1.3" strokeLinecap="round" opacity="0.75" />
+                {/* Branches — lower-right arm */}
+                <line x1="40.1" y1="35" x2="40.1" y2="42"   stroke="white" strokeWidth="1.3" strokeLinecap="round" opacity="0.75" />
+                <line x1="40.1" y1="35" x2="46.2" y2="31.5" stroke="white" strokeWidth="1.3" strokeLinecap="round" opacity="0.75" />
+                {/* Branches — bottom arm */}
+                <line x1="28"   y1="42" x2="21.9" y2="45.5" stroke="white" strokeWidth="1.3" strokeLinecap="round" opacity="0.75" />
+                <line x1="28"   y1="42" x2="34.1" y2="45.5" stroke="white" strokeWidth="1.3" strokeLinecap="round" opacity="0.75" />
+                {/* Branches — lower-left arm */}
+                <line x1="15.9" y1="35" x2="9.8"  y2="31.5" stroke="white" strokeWidth="1.3" strokeLinecap="round" opacity="0.75" />
+                <line x1="15.9" y1="35" x2="15.9" y2="42"   stroke="white" strokeWidth="1.3" strokeLinecap="round" opacity="0.75" />
+                {/* Branches — upper-left arm */}
+                <line x1="15.9" y1="21" x2="15.9" y2="14"   stroke="white" strokeWidth="1.3" strokeLinecap="round" opacity="0.75" />
+                <line x1="15.9" y1="21" x2="9.8"  y2="24.5" stroke="white" strokeWidth="1.3" strokeLinecap="round" opacity="0.75" />
+                {/* Tip crystals */}
+                <circle cx="28"   cy="7"    r="2.5" fill="hsl(200 100% 95%)" />
+                <circle cx="46.2" cy="17.5" r="2.5" fill="hsl(200 100% 95%)" />
+                <circle cx="46.2" cy="38.5" r="2.5" fill="hsl(200 100% 95%)" />
+                <circle cx="28"   cy="49"   r="2.5" fill="hsl(200 100% 95%)" />
+                <circle cx="9.8"  cy="38.5" r="2.5" fill="hsl(200 100% 95%)" />
+                <circle cx="9.8"  cy="17.5" r="2.5" fill="hsl(200 100% 95%)" />
+                {/* Center */}
+                <circle cx="28" cy="28" r="3.5" fill="hsl(200 100% 95%)" />
+              </motion.svg>
+              {/* Online indicator */}
+              <span className="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-background" />
             </motion.div>
           )}
         </AnimatePresence>
@@ -265,34 +325,37 @@ const AIChatbot = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.94 }}
             transition={{ type: "spring", stiffness: 400, damping: 30 }}
-            className="fixed bottom-24 right-6 z-50 w-[min(380px,calc(100vw-24px))] flex flex-col rounded-2xl overflow-hidden shadow-2xl"
+            className="fixed bottom-24 left-6 z-50 w-[min(380px,calc(100vw-24px))] flex flex-col rounded-2xl overflow-hidden shadow-2xl"
             style={{
-              background: "hsl(221 28% 8%)",
-              border: "1px solid hsl(221 18% 18%)",
+              background: "hsl(218 38% 7%)",
+              border: "1px solid hsl(210 25% 18%)",
               maxHeight: "min(580px, calc(100vh - 120px))",
-              boxShadow: "0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px hsl(263 85% 68% / 0.15)",
+              boxShadow: "0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px hsl(200 100% 68% / 0.15)",
             }}
           >
-            {/* Header */}
+            {/* Header — ice blue gradient */}
             <div
               className="flex items-center gap-3 px-4 py-3 shrink-0"
-              style={{ background: "linear-gradient(135deg, hsl(263 85% 68% / 0.12), hsl(185 100% 45% / 0.06))", borderBottom: "1px solid hsl(221 18% 16%)" }}
+              style={{
+                background: "linear-gradient(135deg, hsl(200 100% 68% / 0.12), hsl(195 80% 75% / 0.06))",
+                borderBottom: "1px solid hsl(210 25% 16%)",
+              }}
             >
               {/* Avatar */}
               <div className="relative shrink-0">
                 <div
                   className="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm"
-                  style={{ background: "linear-gradient(135deg, hsl(263 85% 68%), hsl(185 100% 45%))" }}
+                  style={{ background: "linear-gradient(135deg, hsl(200 100% 62%), hsl(195 80% 72%))" }}
                 >
                   R
                 </div>
-                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-[hsl(221_28%_8%)]" />
+                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-[hsl(218_38%_7%)]" />
               </div>
 
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-1.5">
                   <p className="text-sm font-bold text-foreground leading-none">Ray</p>
-                  <Sparkles className="w-3 h-3 text-violet-400" />
+                  <Snowflake className="w-3 h-3" style={{ color: "hsl(200 100% 75%)" }} />
                 </div>
                 <p className="text-[11px] text-muted-foreground mt-0.5 leading-none">{tr.chatbot.assistantLabel}</p>
               </div>
@@ -318,7 +381,7 @@ const AIChatbot = () => {
                   {msg.role === "bot" && (
                     <div
                       className="w-6 h-6 rounded-full shrink-0 mt-0.5 flex items-center justify-center text-white text-[9px] font-bold"
-                      style={{ background: "linear-gradient(135deg, hsl(263 85% 68%), hsl(185 100% 45%))" }}
+                      style={{ background: "linear-gradient(135deg, hsl(200 100% 62%), hsl(195 80% 72%))" }}
                     >
                       R
                     </div>
@@ -332,13 +395,13 @@ const AIChatbot = () => {
                     }`}
                     style={
                       msg.role === "user"
-                        ? { background: "linear-gradient(135deg, hsl(263 85% 60%), hsl(263 85% 52%))" }
-                        : { background: "hsl(221 22% 12%)", border: "1px solid hsl(221 18% 18%)" }
+                        ? { background: "linear-gradient(135deg, hsl(200 100% 50%), hsl(200 100% 42%))" }
+                        : { background: "hsl(215 28% 12%)", border: "1px solid hsl(210 25% 18%)" }
                     }
                   >
                     {renderMessage(msg.text)}
                     {msg.partial && (
-                      <span className="inline-block w-1.5 h-3.5 bg-violet-400 ml-0.5 animate-pulse align-middle rounded-sm" />
+                      <span className="inline-block w-1.5 h-3.5 ml-0.5 animate-pulse align-middle rounded-sm" style={{ background: "hsl(200 100% 75%)" }} />
                     )}
                   </div>
                 </motion.div>
@@ -356,16 +419,16 @@ const AIChatbot = () => {
                   >
                     <div
                       className="w-6 h-6 rounded-full flex items-center justify-center text-white text-[9px] font-bold shrink-0"
-                      style={{ background: "linear-gradient(135deg, hsl(263 85% 68%), hsl(185 100% 45%))" }}
+                      style={{ background: "linear-gradient(135deg, hsl(200 100% 62%), hsl(195 80% 72%))" }}
                     >
                       R
                     </div>
-                    <div className="flex items-center gap-1 px-3 py-2 rounded-2xl rounded-tl-sm" style={{ background: "hsl(221 22% 12%)", border: "1px solid hsl(221 18% 18%)" }}>
+                    <div className="flex items-center gap-1 px-3 py-2 rounded-2xl rounded-tl-sm" style={{ background: "hsl(215 28% 12%)", border: "1px solid hsl(210 25% 18%)" }}>
                       {[0, 0.15, 0.3].map((d, i) => (
                         <span
                           key={i}
-                          className="w-1.5 h-1.5 rounded-full bg-violet-400"
-                          style={{ animation: `typing-dot 1.2s ease-in-out ${d}s infinite` }}
+                          className="w-1.5 h-1.5 rounded-full"
+                          style={{ background: "hsl(200 100% 72%)", animation: `typing-dot 1.2s ease-in-out ${d}s infinite` }}
                         />
                       ))}
                     </div>
@@ -377,7 +440,7 @@ const AIChatbot = () => {
             </div>
 
             {/* Quick replies */}
-            <div className="px-3 py-2 flex gap-1.5 overflow-x-auto no-scrollbar shrink-0" style={{ borderTop: "1px solid hsl(221 18% 14%)" }}>
+            <div className="px-3 py-2 flex gap-1.5 overflow-x-auto no-scrollbar shrink-0" style={{ borderTop: "1px solid hsl(210 25% 14%)" }}>
               {(tr.chatbot.suggestions as readonly string[]).filter((s) => !messages.some((m) => m.role === "user" && m.text === s))
                 .slice(0, 3)
                 .map((s) => (
@@ -387,9 +450,9 @@ const AIChatbot = () => {
                     disabled={typing}
                     className="shrink-0 text-[10px] font-medium px-2.5 py-1 rounded-full border transition-all whitespace-nowrap disabled:opacity-40"
                     style={{
-                      color: "hsl(263 85% 75%)",
-                      background: "hsl(263 85% 68% / 0.08)",
-                      borderColor: "hsl(263 85% 68% / 0.25)",
+                      color: "hsl(200 100% 78%)",
+                      background: "hsl(200 100% 68% / 0.08)",
+                      borderColor: "hsl(200 100% 68% / 0.25)",
                     }}
                   >
                     {s}
@@ -414,7 +477,7 @@ const AIChatbot = () => {
                 type="submit"
                 disabled={!input.trim() || typing}
                 className="w-9 h-9 rounded-xl flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed hover:scale-105 active:scale-95"
-                style={{ background: "linear-gradient(135deg, hsl(263 85% 68%), hsl(185 100% 45%))" }}
+                style={{ background: "linear-gradient(135deg, hsl(200 100% 62%), hsl(195 80% 72%))" }}
               >
                 <Send className="w-3.5 h-3.5 text-white" />
               </button>

@@ -123,12 +123,12 @@ export interface CategoryMeta {
 }
 
 export const categoryMeta: Record<ProjectCategory, CategoryMeta> = {
-  mobile:    { label: 'Mobile Apps',    colorVar: 'hsl(263 85% 68%)',  gradient: 'from-violet-500 to-purple-700',   textColor: 'text-violet-300',  bgColor: 'bg-violet-500/10' },
-  unity:     { label: 'Unity / Games',  colorVar: 'hsl(25 95% 60%)',   gradient: 'from-orange-500 to-red-600',     textColor: 'text-orange-300',  bgColor: 'bg-orange-500/10' },
-  'web-saas':{ label: 'Web SaaS',       colorVar: 'hsl(185 100% 45%)', gradient: 'from-cyan-400 to-blue-600',      textColor: 'text-cyan-300',    bgColor: 'bg-cyan-500/10'  },
-  ecommerce: { label: 'E-commerce',     colorVar: 'hsl(340 80% 65%)',  gradient: 'from-pink-500 to-rose-600',      textColor: 'text-pink-300',    bgColor: 'bg-pink-500/10'  },
-  ai:        { label: 'AI Automation',  colorVar: 'hsl(145 70% 50%)',  gradient: 'from-emerald-400 to-green-600',  textColor: 'text-emerald-300', bgColor: 'bg-emerald-500/10'},
-  desktop:   { label: 'Desktop',        colorVar: 'hsl(50 90% 55%)',   gradient: 'from-amber-400 to-yellow-600',   textColor: 'text-amber-300',   bgColor: 'bg-amber-500/10' },
+  mobile:    { label: 'Mobile Apps',    colorVar: 'hsl(200 100% 70%)', gradient: 'from-sky-400 to-blue-600',      textColor: 'text-sky-300',   bgColor: 'bg-sky-500/10'   },
+  unity:     { label: 'Unity / Games',  colorVar: 'hsl(170 75% 58%)',  gradient: 'from-teal-400 to-cyan-600',     textColor: 'text-teal-300',  bgColor: 'bg-teal-500/10'  },
+  'web-saas':{ label: 'Web SaaS',       colorVar: 'hsl(185 85% 68%)',  gradient: 'from-cyan-300 to-sky-500',      textColor: 'text-cyan-300',  bgColor: 'bg-cyan-500/10'  },
+  ecommerce: { label: 'E-commerce',     colorVar: 'hsl(195 90% 72%)',  gradient: 'from-sky-300 to-blue-500',      textColor: 'text-sky-200',   bgColor: 'bg-sky-400/10'   },
+  ai:        { label: 'AI Automation',  colorVar: 'hsl(155 60% 62%)',  gradient: 'from-teal-300 to-sky-500',      textColor: 'text-teal-300',  bgColor: 'bg-teal-400/10'  },
+  desktop:   { label: 'Desktop',        colorVar: 'hsl(215 80% 76%)',  gradient: 'from-blue-300 to-sky-500',      textColor: 'text-blue-300',  bgColor: 'bg-blue-400/10'  },
 };
 
 export const projects: ProjectItem[] = [
@@ -794,11 +794,11 @@ export const projects: ProjectItem[] = [
 export const profile = {
   name: "Daniel Ray",
   title: "Senior Full-Stack Developer",
-  location: "Lafayette, Tennessee, 37083",
-  university: "Volunteer State Community College",
+  location: "Manila, Philippines",
+  university: "De La Salle University (DLSU)",
   languages: ["English","Spanish","Portuguese","German", "Japanese"],
   headline: "12 Years. 6 Disciplines. 100+ Products.",
-  subheadline: "Senior Full-Stack Developer based in Lafayette, Tennessee. Vol State Alumnus. Specialising in mobile apps, Unity games, web SaaS, AI automation, e-commerce, and desktop software.",
+  subheadline: "Senior Full-Stack Developer based in Manila, Philippines. DLSU Alumnus. Specialising in mobile apps, Unity games, web SaaS, AI automation, e-commerce, and desktop software.",
   bio: "Full-stack engineer with 12 years of delivering robust, scalable products across mobile, web, gaming, AI, and desktop platforms. From Android and Unity to Next.js, LangChain, and Electron — I build software that ships.",
   certifications: [
     "Google Associate Android Developer",

@@ -91,7 +91,7 @@ const Header = () => {
                   }`}
                   style={
                     isActive
-                      ? { background: "hsl(263 85% 68% / 0.1)", border: "1px solid hsl(263 85% 68% / 0.2)" }
+                      ? { background: "hsl(200 100% 68% / 0.10)", border: "1px solid hsl(200 100% 68% / 0.22)" }
                       : {}
                   }
                 >
@@ -100,7 +100,7 @@ const Header = () => {
                     <motion.div
                       layoutId="nav-indicator"
                       className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-3 h-[2px] rounded-full"
-                      style={{ background: "hsl(263 85% 68%)" }}
+                      style={{ background: "hsl(200 100% 68%)" }}
                       transition={{ type: "spring", stiffness: 400, damping: 28 }}
                     />
                   )}

@@ -6,41 +6,41 @@
 
 @layer base {
   :root {
-    /* ── Space-dark · Electric Violet + Cyan ── */
-    --background: 221 39% 5%;
+    /* ── Winter Night · Ice Blue + Frost ── */
+    --background: 220 48% 4%;
     --foreground: 0 0% 97%;
 
-    --card: 221 28% 8%;
+    --card: 218 38% 7%;
     --card-foreground: 0 0% 97%;
 
-    --popover: 221 28% 8%;
+    --popover: 218 38% 7%;
     --popover-foreground: 0 0% 97%;
 
-    --primary: 263 85% 68%;
+    --primary: 200 100% 68%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 263 85% 78%;
+    --primary-glow: 200 100% 80%;
 
-    --secondary: 221 22% 13%;
+    --secondary: 215 28% 12%;
     --secondary-foreground: 0 0% 97%;
 
-    --muted: 221 22% 13%;
-    --muted-foreground: 221 15% 62%;
+    --muted: 215 28% 12%;
+    --muted-foreground: 210 18% 60%;
 
-    --accent: 185 100% 45%;
-    --accent-foreground: 221 39% 5%;
+    --accent: 195 80% 80%;
+    --accent-foreground: 220 48% 4%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 221 18% 16%;
-    --input: 221 18% 16%;
-    --ring: 263 85% 68%;
+    --border: 210 25% 16%;
+    --input: 210 25% 16%;
+    --ring: 200 100% 68%;
 
     --radius: 0.875rem;
 
-    --surface: 221 28% 8%;
-    --surface-highlight: 221 22% 13%;
-    --text-muted: 221 15% 62%;
+    --surface: 218 38% 7%;
+    --surface-highlight: 215 28% 12%;
+    --text-muted: 210 18% 60%;
   }
 }
 
@@ -68,23 +68,27 @@
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb {
-  background: hsl(221 18% 22%);
+  background: hsl(210 25% 20%);
   border-radius: 4px;
 }
-::-webkit-scrollbar-thumb:hover { background: hsl(263 40% 38%); }
+::-webkit-scrollbar-thumb:hover { background: hsl(200 60% 35%); }
 
 /* ── Core Utilities ──────────────────────────────────────────── */
 @layer utilities {
   .glow-primary {
-    box-shadow: 0 0 20px hsl(263 85% 68% / 0.18), 0 0 60px hsl(263 85% 68% / 0.08);
+    box-shadow: 0 0 20px hsl(200 100% 68% / 0.18), 0 0 60px hsl(200 100% 68% / 0.08);
   }
 
   .glow-primary-strong {
-    box-shadow: 0 0 30px hsl(263 85% 68% / 0.32), 0 0 80px hsl(263 85% 68% / 0.14);
+    box-shadow: 0 0 30px hsl(200 100% 68% / 0.32), 0 0 80px hsl(200 100% 68% / 0.14);
   }
 
   .glow-accent {
-    box-shadow: 0 0 20px hsl(185 100% 45% / 0.25), 0 0 60px hsl(185 100% 45% / 0.1);
+    box-shadow: 0 0 20px hsl(195 80% 80% / 0.25), 0 0 60px hsl(195 80% 80% / 0.1);
+  }
+
+  .ice-glow {
+    box-shadow: 0 0 24px hsl(200 100% 70% / 0.35), 0 0 80px hsl(200 100% 70% / 0.15);
   }
 
   .gradient-border {
@@ -99,7 +103,7 @@
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, hsl(263 85% 68% / 0.55), hsl(185 100% 45% / 0.35) 60%, transparent);
+    background: linear-gradient(135deg, hsl(200 100% 68% / 0.55), hsl(195 80% 80% / 0.35) 60%, transparent);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
@@ -113,23 +117,23 @@
     -webkit-backdrop-filter: blur(14px);
   }
 
-  /* Premium multi-stop gradient: white → violet → cyan */
+  /* Winter gradient: white → ice blue → frost crystal */
   .text-gradient {
-    background: linear-gradient(135deg, hsl(0 0% 97%) 0%, hsl(263 85% 80%) 45%, hsl(185 100% 60%) 100%);
+    background: linear-gradient(135deg, hsl(0 0% 97%) 0%, hsl(200 100% 78%) 45%, hsl(195 80% 85%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-violet {
-    background: linear-gradient(135deg, hsl(263 85% 80%), hsl(220 70% 78%));
+    background: linear-gradient(135deg, hsl(200 100% 82%), hsl(210 80% 78%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-cyan {
-    background: linear-gradient(135deg, hsl(185 100% 60%), hsl(200 90% 65%));
+    background: linear-gradient(135deg, hsl(195 80% 80%), hsl(200 90% 75%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -140,7 +144,7 @@
   }
   .btn-fluid:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 22px hsl(263 85% 68% / 0.28);
+    box-shadow: 0 4px 22px hsl(200 100% 68% / 0.28);
   }
   .btn-fluid:active {
     transform: translateY(0) scale(0.97);
@@ -148,7 +152,7 @@
   }
 }
 
-/* ── Aurora Background ───────────────────────────────────────── */
+/* ── Aurora Background (winter: northern lights in ice blues) ── */
 @keyframes aurora-shift {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
@@ -162,10 +166,10 @@
 
 .aurora-bg {
   background:
-    radial-gradient(ellipse 70% 60% at 15% -10%, hsl(263 85% 68% / 0.14) 0%, transparent 55%),
-    radial-gradient(ellipse 55% 50% at 85% 15%, hsl(185 100% 45% / 0.10) 0%, transparent 55%),
-    radial-gradient(ellipse 90% 50% at 50% 110%, hsl(220 70% 55% / 0.07) 0%, transparent 55%),
-    hsl(221 39% 5%);
+    radial-gradient(ellipse 70% 60% at 15% -10%, hsl(200 100% 50% / 0.13) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 50% at 85% 15%, hsl(195 80% 55% / 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 50% at 50% 110%, hsl(215 70% 30% / 0.12) 0%, transparent 55%),
+    hsl(220 48% 4%);
 }
 
 /* Legacy alias used by footer */
@@ -173,10 +177,10 @@
   background:
     linear-gradient(
       135deg,
-      hsl(221 39% 5%) 0%,
-      hsl(240 28% 7%) 30%,
-      hsl(263 30% 7%) 60%,
-      hsl(221 39% 5%) 100%
+      hsl(220 48% 4%) 0%,
+      hsl(218 38% 6%) 30%,
+      hsl(210 45% 6%) 60%,
+      hsl(220 48% 4%) 100%
     );
   background-size: 400% 400%;
   animation: aurora-shift 22s ease infinite;
@@ -187,11 +191,11 @@
   background:
     linear-gradient(
       135deg,
-      hsl(221 28% 8%) 0%,
-      hsl(240 22% 10%) 25%,
-      hsl(221 25% 9%) 50%,
-      hsl(200 18% 9%) 75%,
-      hsl(221 28% 8%) 100%
+      hsl(218 38% 7%) 0%,
+      hsl(215 32% 9%) 25%,
+      hsl(210 38% 8%) 50%,
+      hsl(215 28% 8%) 75%,
+      hsl(218 38% 7%) 100%
     );
   background-size: 200% 200%;
   animation: aurora-shift 14s ease infinite;
@@ -224,6 +228,31 @@
   to   { transform: rotate(360deg); }
 }
 
+/* ── Chatbot button pulse (ice blue) ─────────────────────────── */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 0   hsl(200 100% 68% / 0.65); }
+  50%       { box-shadow: 0 0 0 10px hsl(200 100% 68% / 0);   }
+}
+
+/* ── Snowfall Animation ───────────────────────────────────────── */
+@keyframes snowfall {
+  0% {
+    transform: translateY(-12px) translateX(0px);
+    opacity: 0;
+  }
+  8%  { opacity: 1; }
+  92% { opacity: 0.8; }
+  100% {
+    transform: translateY(110vh) translateX(var(--snow-sway, 25px));
+    opacity: 0;
+  }
+}
+
+@keyframes snowflake-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
 /* ── Typing Dots (chatbot) ───────────────────────────────────── */
 @keyframes typing-dot {
   0%, 60%, 100% { transform: translateY(0);    opacity: 0.4; }
@@ -232,8 +261,8 @@
 
 /* ── Category pill glow (project catalog) ────────────────────── */
 @keyframes pill-glow {
-  0%, 100% { box-shadow: 0 0 0 0 hsl(263 85% 68% / 0); }
-  50%       { box-shadow: 0 0 16px 4px hsl(263 85% 68% / 0.3); }
+  0%, 100% { box-shadow: 0 0 0 0 hsl(200 100% 68% / 0); }
+  50%       { box-shadow: 0 0 16px 4px hsl(200 100% 68% / 0.3); }
 }
 
 /* ── Scan-line accent ────────────────────────────────────────── */
@@ -253,3 +282,104 @@
 /* ── Hide scrollbar (keep scroll) ────────────────────────────── */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Frost section header ────────────────────────────────────── */
+/* Applied to sticky section-header divs for a frosted-glass look */
+.frost-header {
+  background: hsl(220 48% 4% / 0.84);
+  backdrop-filter: blur(22px) saturate(1.18);
+  -webkit-backdrop-filter: blur(22px) saturate(1.18);
+  border-bottom: 1px solid hsl(200 100% 80% / 0.07);
+  box-shadow: 0 6px 28px hsl(200 100% 30% / 0.07);
+}
+
+/* Ice-crystal underline on h2 inside a frost-header */
+.frost-header h2::after {
+  content: '';
+  display: block;
+  height: 1.5px;
+  width: 56px;
+  margin: 7px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    hsl(200 100% 70%),
+    hsl(195 80% 84%),
+    transparent
+  );
+}
+
+/* ── Snowflake watermark on cards ────────────────────────────── */
+/* Add .snowflake-mark to any relative + overflow-hidden card */
+.snowflake-mark::before {
+  content: '❄';
+  position: absolute;
+  bottom: -14px;
+  right: -4px;
+  font-size: 96px;
+  line-height: 1;
+  color: hsl(200 100% 85%);
+  opacity: 0.032;
+  pointer-events: none;
+  user-select: none;
+  transform: rotate(12deg);
+}
+
+/* Second smaller snowflake for variety */
+.snowflake-mark::after {
+  content: '❄';
+  position: absolute;
+  top: -10px;
+  left: 6px;
+  font-size: 52px;
+  line-height: 1;
+  color: hsl(200 100% 85%);
+  opacity: 0.018;
+  pointer-events: none;
+  user-select: none;
+  transform: rotate(-20deg);
+}
+
+/* ── Footer ice-edge accumulation ────────────────────────────── */
+/* Radial snow-drift glows sitting on the top border of the footer */
+.footer-ice-edge::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsl(200 100% 80% / 0.30) 20%,
+    hsl(200 100% 92% / 0.55) 50%,
+    hsl(200 100% 80% / 0.30) 80%,
+    transparent 100%
+  );
+}
+
+.footer-ice-edge::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 32px;
+  background:
+    radial-gradient(ellipse 28% 100% at 18% 0%, hsl(200 100% 80% / 0.06) 0%, transparent 100%),
+    radial-gradient(ellipse 24% 100% at 42% 0%, hsl(200 100% 80% / 0.08) 0%, transparent 100%),
+    radial-gradient(ellipse 32% 100% at 67% 0%, hsl(200 100% 80% / 0.05) 0%, transparent 100%),
+    radial-gradient(ellipse 22% 100% at 88% 0%, hsl(200 100% 80% / 0.07) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* ── Ice card border on hover ────────────────────────────────── */
+.ice-card-hover {
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.ice-card-hover:hover {
+  border-color: hsl(200 100% 70% / 0.35) !important;
+  box-shadow: 0 0 20px hsl(200 100% 70% / 0.06), inset 0 0 30px hsl(200 100% 80% / 0.02);
+}

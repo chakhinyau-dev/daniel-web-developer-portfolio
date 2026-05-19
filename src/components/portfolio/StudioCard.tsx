@@ -36,8 +36,8 @@ const StudioCard = ({ studio, index }: StudioCardProps) => {
       viewport={{ once: true, amount: 0.2 }}
       whileHover={{
         y: -6,
-        boxShadow: "0 12px 40px hsla(141, 73%, 42%, 0.12)",
-        borderColor: "hsl(141, 73%, 42%, 0.4)",
+        boxShadow: "0 12px 40px hsl(200 100% 68% / 0.12)",
+        borderColor: "hsl(200 100% 68% / 0.4)",
       }}
       transition={{ type: "spring", stiffness: 300, damping: 22 }}
       className="bg-card rounded-xl border border-border p-5 flex flex-col relative overflow-hidden group"

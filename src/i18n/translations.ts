@@ -173,7 +173,7 @@ const t = {
       description: "Senior Full-Stack Developer building mobile apps, games, web platforms, AI tools, and desktop software for over a decade.",
       navLabel: "Navigation",
       builtWith: "Designed & built with",
-      inLocation: "in Lafayette, TN",
+      inLocation: "in Manila, Philippines",
       allRights: "All rights reserved.",
       stats: { years: "Years", products: "Products shipped", disciplines: "Disciplines", catalog: "Projects in catalog" },
     },

@@ -32,12 +32,12 @@ const Footer = () => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="relative overflow-hidden border-t border-border"
+      className="relative overflow-hidden border-t border-border footer-ice-edge"
     >
       {/* Background */}
       <div className="absolute inset-0 stripe-bg opacity-70" />
-      <div className="absolute top-0 left-1/3 w-96 h-96 bg-[radial-gradient(circle,hsl(263_85%_68%/0.04),transparent_70%)]" />
-      <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[radial-gradient(circle,hsl(185_100%_45%/0.03),transparent_70%)]" />
+      <div className="absolute top-0 left-1/3 w-96 h-96 bg-[radial-gradient(circle,hsl(200_100%_68%/0.05),transparent_70%)]" />
+      <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[radial-gradient(circle,hsl(195_80%_75%/0.04),transparent_70%)]" />
 
       <div className="relative max-w-6xl mx-auto px-6 md:px-10">
         {/* Stats bar */}
@@ -72,7 +72,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-1.5 mt-3 text-xs text-muted-foreground">
               <MapPin className="w-3 h-3 text-primary" />
-              <span>Lafayette, TN</span>
+              <span>{profile.location}</span>
               <span className="mx-1 text-border">·</span>
               <Code2 className="w-3 h-3 text-primary" />
               <span>Full-Stack</span>

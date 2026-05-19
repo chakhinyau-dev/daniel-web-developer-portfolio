@@ -66,7 +66,7 @@ const AppCardHeader = ({ app }: { app: import("@/data/portfolio").AppItem }) => 
 
   return (
     <div className="relative h-36 bg-gradient-to-br from-secondary to-muted flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(141_73%_42%/0.08),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(200_100%_68%/0.08),transparent_60%)]" />
       <motion.div
         className="w-16 h-16 rounded-2xl bg-card shadow-xl overflow-hidden border border-border/50"
         whileHover={{ rotate: [0, -5, 5, 0], scale: 1.1 }}
@@ -128,7 +128,7 @@ const TimelineWorkHistory = () => {
         transition={{ duration: 0.45 }}
         className="mb-16 scroll-mt-24"
       >
-      <div className="sticky top-14 z-10 bg-background/80 backdrop-blur-md py-4 mb-12 text-center">
+      <div className="sticky top-14 z-10 frost-header py-4 mb-12 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -173,7 +173,7 @@ const TimelineWorkHistory = () => {
             >
               {/* Node */}
               <div className="absolute left-1/2 -translate-x-1/2 z-10">
-                <div className="w-3 h-3 rounded-full bg-primary border-2 border-background shadow-[0_0_8px_hsl(141_73%_42%/0.4)]" />
+                <div className="w-3 h-3 rounded-full bg-primary border-2 border-background shadow-[0_0_8px_hsl(200_100%_68%/0.4)]" />
               </div>
 
               {/* Branch line */}
@@ -283,7 +283,7 @@ const TimelineWorkHistory = () => {
                     whileHover={{
                       y: -6,
                       scale: 1.02,
-                      boxShadow: "0 20px 60px hsl(141 73% 42% / 0.12), 0 0 0 1px hsl(141 73% 42% / 0.2)",
+                      boxShadow: "0 20px 60px hsl(200 100% 68% / 0.12), 0 0 0 1px hsl(200 100% 68% / 0.2)",
                     }}
                     transition={{ type: "spring", stiffness: 300, damping: 22 }}
                     className={`bg-card rounded-xl border border-border overflow-hidden group relative flex flex-col ${

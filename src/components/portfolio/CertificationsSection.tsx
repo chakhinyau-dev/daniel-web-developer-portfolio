@@ -110,7 +110,7 @@ const CertificationsSection = () => {
       transition={{ duration: 0.5 }}
       className="mb-16"
     >
-      <div className="sticky top-0 z-10 bg-background/80 backdrop-blur-md py-4 mb-8 text-center">
+      <div className="sticky top-0 z-10 frost-header py-4 mb-8 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -136,9 +136,9 @@ const CertificationsSection = () => {
               transition={{ duration: 0.5, delay: i * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }}
               whileHover={{
                 y: -4,
-                boxShadow: "0 16px 48px hsl(263 85% 68% / 0.14)",
+                boxShadow: "0 16px 48px hsl(200 100% 68% / 0.16)",
               }}
-              className="bg-card rounded-xl p-6 border border-border hover:border-primary/40 transition-all duration-300 group relative overflow-hidden"
+              className="bg-card rounded-xl p-6 border border-border hover:border-primary/40 transition-all duration-300 group relative overflow-hidden snowflake-mark ice-card-hover"
             >
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 

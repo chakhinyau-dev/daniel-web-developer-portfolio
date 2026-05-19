@@ -12,7 +12,7 @@ const EducationSection = () => {
       transition={{ duration: 0.5 }}
       className="mb-16"
     >
-      <div className="sticky top-14 z-10 bg-background/80 backdrop-blur-md py-4 mb-8 text-center">
+      <div className="sticky top-14 z-10 frost-header py-4 mb-8 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -31,8 +31,8 @@ const EducationSection = () => {
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-        whileHover={{ boxShadow: "0 16px 48px hsl(263 85% 68% / 0.1)" }}
-        className="bg-card rounded-xl p-6 md:p-8 border border-border relative overflow-hidden group transition-all duration-300"
+        whileHover={{ boxShadow: "0 16px 48px hsl(200 100% 68% / 0.1)" }}
+        className="bg-card rounded-xl p-6 md:p-8 border border-border relative overflow-hidden group transition-all duration-300 snowflake-mark ice-card-hover"
       >
         {/* Gradient accent top line */}
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
@@ -41,13 +41,13 @@ const EducationSection = () => {
           <motion.div
             whileHover={{ rotate: -10, scale: 1.1 }}
             className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0 glow-primary transition-all duration-300"
-            style={{ background: "hsl(263 85% 68% / 0.12)", border: "1px solid hsl(263 85% 68% / 0.3)" }}
+            style={{ background: "hsl(200 100% 68% / 0.12)", border: "1px solid hsl(200 100% 68% / 0.3)" }}
           >
             <GraduationCap className="w-7 h-7 text-primary" />
           </motion.div>
 
           <div className="flex-1">
-            <h3 className="text-lg font-bold text-foreground">Volunteer State Community College</h3>
+            <h3 className="text-lg font-bold text-foreground">De La Salle University (DLSU)</h3>
             <p className="text-sm text-muted-foreground mt-1">
               {tr.education.degree}
             </p>
@@ -55,7 +55,7 @@ const EducationSection = () => {
             <div className="flex flex-wrap gap-4 mt-3 text-sm text-muted-foreground">
               <div className="flex items-center gap-1.5">
                 <MapPin className="w-3.5 h-3.5 text-primary" />
-                <span>Gallatin, Tennessee</span>
+                <span>Manila, Philippines</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <Calendar className="w-3.5 h-3.5 text-primary" />
@@ -100,8 +100,8 @@ const EducationSection = () => {
                 className="rounded-xl overflow-hidden border border-border shadow-lg"
               >
                 <iframe
-                  title="Vol State Location"
-                  src="https://maps.google.com/maps?q=Volunteer+State+Community+College,+1480+Nashville+Pike,+Gallatin,+TN+37066&output=embed"
+                  title="DLSU Location"
+                  src="https://maps.google.com/maps?q=De+La+Salle+University,+2401+Taft+Avenue,+Malate,+Manila,+Philippines&output=embed"
                   width="100%"
                   height="220"
                   style={{ border: 0 }}

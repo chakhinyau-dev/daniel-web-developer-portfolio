@@ -7,14 +7,14 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 // ─── Skill data ───────────────────────────────────────────────────────────────
 
-const VIOLET  = "hsl(263 85% 68%)";
-const CYAN    = "hsl(185 100% 45%)";
-const ORANGE  = "hsl(25 95% 60%)";
-const BLUE    = "hsl(220 70% 60%)";
-const GREEN   = "hsl(145 70% 50%)";
-const AMBER   = "hsl(50 90% 55%)";
-const PINK    = "hsl(340 80% 65%)";
-const SLATE   = "hsl(221 15% 62%)";
+const VIOLET  = "hsl(200 100% 70%)";   // ice blue
+const CYAN    = "hsl(185 85% 68%)";    // frost teal
+const ORANGE  = "hsl(170 75% 58%)";   // arctic teal
+const BLUE    = "hsl(210 80% 72%)";   // steel blue
+const GREEN   = "hsl(155 60% 62%)";   // icy mint
+const AMBER   = "hsl(215 80% 76%)";   // arctic sky
+const PINK    = "hsl(195 90% 72%)";   // crystal clear
+const SLATE   = "hsl(210 22% 68%)";
 
 interface Skill { name: string; years: string; }
 interface Category {
@@ -180,7 +180,7 @@ const SkillsSection = () => {
       className="mb-16"
     >
       {/* ── Sticky header ────────────────────────────────────────────────── */}
-      <div className="sticky top-0 z-10 bg-background/80 backdrop-blur-md py-4 mb-8 text-center">
+      <div className="sticky top-0 z-10 frost-header py-4 mb-8 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -210,7 +210,7 @@ const SkillsSection = () => {
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.boxShadow = "";
             }}
-            className="rounded-2xl p-6 border transition-all duration-300 relative overflow-hidden group stripe-bg-card"
+            className="rounded-2xl p-6 border transition-all duration-300 relative overflow-hidden group stripe-bg-card snowflake-mark ice-card-hover"
             style={{ borderColor: `${cat.color}30` }}
           >
             {/* Radial glow */}
@@ -374,7 +374,7 @@ const SkillsSection = () => {
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.boxShadow = "";
             }}
-            className="rounded-xl p-5 border border-border transition-all duration-300 relative overflow-hidden group stripe-bg-card"
+            className="rounded-xl p-5 border border-border transition-all duration-300 relative overflow-hidden group stripe-bg-card snowflake-mark ice-card-hover"
           >
             <div className="relative flex items-center gap-3 mb-4">
               <div
