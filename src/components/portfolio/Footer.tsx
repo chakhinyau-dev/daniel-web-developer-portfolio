@@ -32,12 +32,12 @@ const Footer = () => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="relative overflow-hidden border-t border-border"
+      className="relative overflow-hidden border-t border-border footer-ice-edge"
     >
       {/* Background */}
       <div className="absolute inset-0 stripe-bg opacity-70" />
-      <div className="absolute top-0 left-1/3 w-96 h-96 bg-[radial-gradient(circle,hsl(263_85%_68%/0.04),transparent_70%)]" />
-      <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[radial-gradient(circle,hsl(185_100%_45%/0.03),transparent_70%)]" />
+      <div className="absolute top-0 left-1/3 w-96 h-96 bg-[radial-gradient(circle,hsl(200_100%_68%/0.05),transparent_70%)]" />
+      <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[radial-gradient(circle,hsl(195_80%_75%/0.04),transparent_70%)]" />
 
       <div className="relative max-w-6xl mx-auto px-6 md:px-10">
         {/* Stats bar */}
@@ -66,13 +66,48 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-xl font-extrabold tracking-tight text-gradient">DR.</p>
+            <div className="flex items-center gap-2">
+              {/* Rotating snowflake crystal logo mark */}
+              <motion.svg
+                width="26" height="26" viewBox="0 0 20 20"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                style={{ filter: "drop-shadow(0 0 4px hsl(200 100% 75% / 0.8))", flexShrink: 0 }}
+              >
+                <line x1="10" y1="10" x2="10"    y2="2"    stroke="hsl(200 100% 85%)" strokeWidth="1.2" strokeLinecap="round" />
+                <line x1="10" y1="10" x2="16.93" y2="6"    stroke="hsl(200 100% 85%)" strokeWidth="1.2" strokeLinecap="round" />
+                <line x1="10" y1="10" x2="16.93" y2="14"   stroke="hsl(200 100% 85%)" strokeWidth="1.2" strokeLinecap="round" />
+                <line x1="10" y1="10" x2="10"    y2="18"   stroke="hsl(200 100% 85%)" strokeWidth="1.2" strokeLinecap="round" />
+                <line x1="10" y1="10" x2="3.07"  y2="14"   stroke="hsl(200 100% 85%)" strokeWidth="1.2" strokeLinecap="round" />
+                <line x1="10" y1="10" x2="3.07"  y2="6"    stroke="hsl(200 100% 85%)" strokeWidth="1.2" strokeLinecap="round" />
+                <line x1="10"    y1="5"    x2="12.6"  y2="3.5"  stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="10"    y1="5"    x2="7.4"   y2="3.5"  stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="14.33" y1="7.5"  x2="16.93" y2="9"    stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="14.33" y1="7.5"  x2="14.33" y2="4.5"  stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="14.33" y1="12.5" x2="14.33" y2="15.5" stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="14.33" y1="12.5" x2="16.93" y2="11"   stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="10"    y1="15"   x2="7.4"   y2="16.5" stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="10"    y1="15"   x2="12.6"  y2="16.5" stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="5.67"  y1="12.5" x2="3.07"  y2="11"   stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="5.67"  y1="12.5" x2="5.67"  y2="15.5" stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="5.67"  y1="7.5"  x2="5.67"  y2="4.5"  stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <line x1="5.67"  y1="7.5"  x2="3.07"  y2="9"    stroke="hsl(200 100% 85%)" strokeWidth="0.75" strokeLinecap="round" opacity="0.8" />
+                <circle cx="10"    cy="2"  r="1.1" fill="hsl(200 100% 95%)" />
+                <circle cx="16.93" cy="6"  r="1.1" fill="hsl(200 100% 95%)" />
+                <circle cx="16.93" cy="14" r="1.1" fill="hsl(200 100% 95%)" />
+                <circle cx="10"    cy="18" r="1.1" fill="hsl(200 100% 95%)" />
+                <circle cx="3.07"  cy="14" r="1.1" fill="hsl(200 100% 95%)" />
+                <circle cx="3.07"  cy="6"  r="1.1" fill="hsl(200 100% 95%)" />
+                <circle cx="10"    cy="10" r="1.4" fill="hsl(200 100% 95%)" />
+              </motion.svg>
+              <p className="text-xl font-extrabold tracking-tight text-gradient">DR.</p>
+            </div>
             <p className="text-sm text-muted-foreground mt-2 leading-relaxed max-w-xs" style={{ textWrap: "pretty" as never }}>
               {tr.footer.description}
             </p>
             <div className="flex items-center gap-1.5 mt-3 text-xs text-muted-foreground">
               <MapPin className="w-3 h-3 text-primary" />
-              <span>Lafayette, TN</span>
+              <span>{profile.location}</span>
               <span className="mx-1 text-border">·</span>
               <Code2 className="w-3 h-3 text-primary" />
               <span>Full-Stack</span>

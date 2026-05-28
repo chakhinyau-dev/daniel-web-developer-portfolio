@@ -7,8 +7,8 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const ICONS = [Smartphone, Globe, Gamepad2, ShoppingBag, Bot, Monitor, Blocks, Wrench];
 const COLORS = [
-  "hsl(263 85% 68%)", "hsl(185 100% 45%)", "hsl(25 95% 60%)",  "hsl(340 80% 65%)",
-  "hsl(145 70% 50%)", "hsl(50 90% 55%)",   "hsl(220 70% 60%)", "hsl(263 60% 75%)",
+  "hsl(200 100% 70%)", "hsl(185 85% 68%)", "hsl(170 75% 58%)", "hsl(195 90% 72%)",
+  "hsl(155 60% 62%)", "hsl(215 80% 76%)",  "hsl(210 80% 72%)", "hsl(230 65% 78%)",
 ];
 
 const WhatICanWorkOnSection = () => {
@@ -21,7 +21,7 @@ const WhatICanWorkOnSection = () => {
       transition={{ duration: 0.5 }}
       className="mb-16"
     >
-      <div className="sticky top-0 z-10 bg-background/80 backdrop-blur-md py-4 mb-8 text-center">
+      <div className="sticky top-0 z-10 frost-header py-4 mb-8 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ const WhatICanWorkOnSection = () => {
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.boxShadow = "";
             }}
-            className="rounded-xl p-5 border border-border stripe-bg-card transition-all duration-300"
+            className="rounded-xl p-5 border border-border stripe-bg-card transition-all duration-300 relative overflow-hidden snowflake-mark ice-card-hover"
           >
             <div className="h-[2px] -mx-5 -mt-5 mb-5 rounded-t-xl" style={{ background: `linear-gradient(90deg, ${color}, ${color}44, transparent)` }} />
 

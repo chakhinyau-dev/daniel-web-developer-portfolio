@@ -22,13 +22,13 @@ interface FilterOption {
 }
 
 const FILTERS: FilterOption[] = [
-  { key: 'all',       label: 'All Projects',   icon: LayoutGrid,   colorVar: 'hsl(263 85% 68%)' },
-  { key: 'mobile',    label: 'Mobile Apps',    icon: Smartphone,   colorVar: 'hsl(263 85% 68%)' },
-  { key: 'web-saas',  label: 'Web SaaS',       icon: Globe,        colorVar: 'hsl(185 100% 45%)'},
-  { key: 'ai',        label: 'AI Automation',  icon: Bot,          colorVar: 'hsl(145 70% 50%)' },
-  { key: 'ecommerce', label: 'E-commerce',     icon: ShoppingBag,  colorVar: 'hsl(340 80% 65%)' },
-  { key: 'unity',     label: 'Unity / Games',  icon: Gamepad2,     colorVar: 'hsl(25 95% 60%)'  },
-  { key: 'desktop',   label: 'Desktop',        icon: Monitor,      colorVar: 'hsl(50 90% 55%)'  },
+  { key: 'all',       label: 'All Projects',   icon: LayoutGrid,   colorVar: 'hsl(200 100% 70%)' },
+  { key: 'mobile',    label: 'Mobile Apps',    icon: Smartphone,   colorVar: 'hsl(200 100% 70%)' },
+  { key: 'web-saas',  label: 'Web SaaS',       icon: Globe,        colorVar: 'hsl(185 85% 68%)' },
+  { key: 'ai',        label: 'AI Automation',  icon: Bot,          colorVar: 'hsl(155 60% 62%)' },
+  { key: 'ecommerce', label: 'E-commerce',     icon: ShoppingBag,  colorVar: 'hsl(195 90% 72%)' },
+  { key: 'unity',     label: 'Unity / Games',  icon: Gamepad2,     colorVar: 'hsl(170 75% 58%)' },
+  { key: 'desktop',   label: 'Desktop',        icon: Monitor,      colorVar: 'hsl(215 80% 76%)' },
 ];
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -41,8 +41,8 @@ const FILTER_TR_KEYS: Record<FilterKey, 'all' | 'mobile' | 'webSaas' | 'ai' | 'e
 const statusColor: Record<ProjectItem['status'], string> = {
   live:      'text-emerald-400 bg-emerald-400/10 border-emerald-400/20',
   shipped:   'text-blue-400 bg-blue-400/10 border-blue-400/20',
-  freelance: 'text-violet-400 bg-violet-400/10 border-violet-400/20',
-  contract:  'text-amber-400 bg-amber-400/10 border-amber-400/20',
+  freelance: 'text-sky-400 bg-sky-400/10 border-sky-400/20',
+  contract:  'text-blue-300 bg-blue-300/10 border-blue-300/20',
 };
 
 // ─── Screenshot modal ─────────────────────────────────────────────────────────
@@ -136,7 +136,7 @@ const Modal = ({
           ) : (
             <div
               className="relative flex items-center justify-center min-h-[280px]"
-              style={{ background: `radial-gradient(ellipse 80% 70% at 50% 50%, ${meta.colorVar}18 0%, transparent 70%), hsl(221 28% 8%)` }}
+              style={{ background: `radial-gradient(ellipse 80% 70% at 50% 50%, ${meta.colorVar}18 0%, transparent 70%), hsl(218 38% 7%)` }}
             >
               <div className="text-center">
                 <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-3"
@@ -282,7 +282,7 @@ const ProjectCard = ({
           <div
             className="w-full h-full flex items-center justify-center"
             style={{
-              background: `radial-gradient(ellipse 90% 80% at 50% 60%, ${meta.colorVar}18 0%, transparent 70%), hsl(221 28% 8%)`,
+              background: `radial-gradient(ellipse 90% 80% at 50% 60%, ${meta.colorVar}18 0%, transparent 70%), hsl(218 38% 7%)`,
             }}
           >
             <div
@@ -296,7 +296,7 @@ const ProjectCard = ({
 
         {/* Featured badge */}
         {project.featured && (
-          <div className="absolute top-2 left-2 flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-black/60 backdrop-blur-sm text-amber-300 border border-amber-400/25">
+          <div className="absolute top-2 left-2 flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-black/60 backdrop-blur-sm text-sky-300 border border-sky-400/25">
             <Sparkles className="w-2.5 h-2.5" /> {tr.projects.featured}
           </div>
         )}
